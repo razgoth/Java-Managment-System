@@ -11,7 +11,7 @@ public class JsonFileHandling {
 
     public static ObjectMapper mapper = new ObjectMapper();
     public static InputStream inputStream;
-
+    // this method convert Json file to java object
     public static <Object> Object convertJsonToObject(String JsonFilePath, Class<Object> objectClass) {
         Object result = null;
         try {
