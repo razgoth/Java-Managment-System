@@ -1,0 +1,41 @@
+[{
+        "id": "id1",
+        "name": "Input handling",
+        "estimatedHours": 30,
+        "weeks": [1, 2],
+        "hoursPerTask": {
+            "week": 1,
+            "hours": 2
+        }
+    },
+    {
+        "id": "id2",
+        "name": "Calculations",
+        "estimatedHours": 15,
+        "weeks": [3],
+        "hoursPerTask": {
+            "week": 1,
+            "hours": 2
+        }
+    },
+    {
+        "id": "id3",
+        "name": "Visualizations",
+        "estimatedHours": 30,
+        "weeks": [4, 5],
+        "hoursPerTask": {
+            "week": 1,
+            "hours": 2
+        }
+    }, {
+        "id": "id4",
+        "name": "Visualizations",
+        "estimatedHours": 30,
+        "weeks": [4, 5],
+        "hoursPerTask": {
+            "week": 1,
+            "hours": 2
+        }
+    }
+
+]
