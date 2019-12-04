@@ -25,9 +25,6 @@
 hs_err_pid*
 .idea
 *.iml
-ProjectMiniMain.java
-testingWorkpackage.java
-testingWithOutMethod.java
 Members.java
 MapsTesting.java
 TestRamzi.java
