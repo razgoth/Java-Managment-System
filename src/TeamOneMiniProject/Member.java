@@ -28,4 +28,15 @@ public class Member {
     public HashMap<String, Integer> getWork() {
         return work;
     }
+
+    //string to String
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id='" + id + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", costPerHour=" + costPerHour +
+                ", work=" + work +
+                '}';
+    }
 }
