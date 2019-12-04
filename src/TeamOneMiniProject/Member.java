@@ -29,7 +29,6 @@ public class Member {
         return work;
     }
 
-    //string to String
     @Override
     public String toString() {
         return "Member{" +
