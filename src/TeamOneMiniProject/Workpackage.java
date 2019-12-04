@@ -10,6 +10,8 @@ public class Workpackage {
     private int[] weeks;
     private HoursPerTask hoursPerTask;
 
+
+
     public Workpackage(String id, String name, double estimatedHours, int[] weeks, HoursPerTask hoursPerTask) {
         this.id = id;
         this.name = name;

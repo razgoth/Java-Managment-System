@@ -20,7 +20,6 @@ public class Risks {
         return description;
     }
 
-
     public double getImpact() {
         return impact;
     }
@@ -28,6 +27,8 @@ public class Risks {
     public double getProbability() {
         return probability;
     }
+
+    public double getRisk() { return impact * probability; }
 
 
     @Override

@@ -24,7 +24,7 @@ public class testingWithOutMethod {
 
                 List<Risks> risks = mapper.readValue(inputStream, typeReference);
                 for (Risks r : risks) {
-                    System.out.println(r.getImpact());
+                    System.out.println(r.getRisk());
                 }
 
             } catch (FileNotFoundException e) {
