@@ -6,24 +6,35 @@ public class Projects {
     private String fullName;
     private int startWeek;
     private int endWeek;
-    private String milestone;
+    private Object [] milestone;
+    private String id;
+    private String name;
+    private int estimatedHours;
+    private int [] weeks;
 
     public Projects() {}
 
-    public Projects(String fullName, int startWeek, int endWeek, String milestone) {
-        super();
-        this.fullName = fullName;
+    public Projects(String projectName, int startWeek, int endWeek, Object[] milestone, String id, String name, int estimatedHours, int[] weeks) {
+        this.projectName = projectName;
         this.startWeek = startWeek;
         this.endWeek = endWeek;
         this.milestone = milestone;
+        this.id = id;
+        this.name = name;
+        this.estimatedHours = estimatedHours;
+        this.weeks = weeks;
     }
 
     public String getFullName() {
-        return fullName;
+        return projectName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
     }
 
     public int getStartWeek() {
@@ -42,14 +53,43 @@ public class Projects {
         this.endWeek = endWeek;
     }
 
-    public String getMilestone() {
+    public Object[] getMilestone() {
         return milestone;
     }
 
-    public void setMilestone(String milestone) {
+    public void setMilestone(Object[] milestone) {
         this.milestone = milestone;
     }
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getEstimatedHours() {
+        return estimatedHours;
+    }
+
+    public void setEstimatedHours(int estimatedHours) {
+        this.estimatedHours = estimatedHours;
+    }
+
+    public int[] getWeeks() {
+        return weeks;
+    }
+
+    public void setWeeks(int[] weeks) {
+        this.weeks = weeks;
+    }
 }
