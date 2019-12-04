@@ -57,39 +57,29 @@ public class Projects {
         return milestone;
     }
 
-    public void setMilestone(Object[] milestone) {
-        this.milestone = milestone;
-    }
+
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 
     public int getEstimatedHours() {
         return estimatedHours;
     }
 
-    public void setEstimatedHours(int estimatedHours) {
-        this.estimatedHours = estimatedHours;
-    }
+
 
     public int[] getWeeks() {
         return weeks;
     }
 
-    public void setWeeks(int[] weeks) {
-        this.weeks = weeks;
-    }
+
 }

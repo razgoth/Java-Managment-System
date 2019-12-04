@@ -19,26 +19,16 @@ public class Risks {
     public String getDescription() {
         return description;
     }
-//
-//    public void setDescription(String description) {
-//        this.description = description;
-//    }
+
 
     public double getImpact() {
         return impact;
     }
-//
-//    public void setImpact(double impact) {
-//        this.impact = impact;
-//    }
 
     public double getProbability() {
         return probability;
     }
 
-//    public void setProbability(double probability) {
-//        this.probability = probability;
-//    }
 
     @Override
     public String toString() {

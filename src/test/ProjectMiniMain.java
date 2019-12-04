@@ -1,4 +1,4 @@
-package test;
+/*package test;
 
 import TeamOneMiniProject.Risks;
 import TeamOneMiniProject.Workpackage;
@@ -23,25 +23,29 @@ for (Risks r : risks){
 }
 
 
-//        try {
-//            ObjectMapper mapper = new ObjectMapper();
-//            InputStream inputStream = new FileInputStream(new File("C:\\Users\\heaven\\Desktop\\Code\\josnss\\risks.json"));
-//            TypeReference<List<Risks>> typeReference = new TypeReference<List<Risks>>() {
-//            };
-//
-//            List<Risks> risks1 = mapper.readValue(inputStream, typeReference);
-//            for (Risks r : risks) {
-//                System.out.println(r.getImpact());
-//            }
-//
-//
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            InputStream inputStream = new FileInputStream(new File("C:\\Users\\heaven\\Desktop\\Code\\josnss\\risks.json"));
+            TypeReference<List<Risks>> typeReference = new TypeReference<List<Risks>>() {
+            };
+
+           List<Risks> risks1 = mapper.readValue(inputStream, typeReference);
+            for (Risks r : risks) {
+                System.out.println(r.getImpact());
+            }
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+       }
 
 
     }
 
+
+
 }
+
+ */

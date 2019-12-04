@@ -18,7 +18,7 @@ public class testingWithOutMethod {
 
         {
             try {
-                inputStream = new FileInputStream(new File("C:\\Users\\heaven\\Desktop\\Code\\josnss\\risks.json"));
+                inputStream = new FileInputStream(new File("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/Risks.json"));
                 TypeReference<List<Risks>> typeReference = new TypeReference<List<Risks>>() {
                 };
 
@@ -37,6 +37,9 @@ public class testingWithOutMethod {
                 e.printStackTrace();
             }
         }
+
     }
+
+
 
 }

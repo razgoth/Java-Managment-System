@@ -26,40 +26,30 @@ public class Workpackage {
         return id;
     }
 
-    public void setID(String id) {
-        this.id = id;
-    }
+
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 
     public double getEstimatedHours() {
         return estimatedHours;
     }
 
-    public void setEstimatedHours(double estimatedHours) {
-        this.estimatedHours = estimatedHours;
-    }
+
 
     public int[] getWeeks() {
         return weeks;
     }
 
-    public void setWeeks(int[] weeks) {
-        this.weeks = weeks;
-    }
+
 
     public HoursPerTask getHoursPerTask() {
         return hoursPerTask;
     }
 
-    public void setHoursPerTask(HoursPerTask hoursPerTask) {
-        this.hoursPerTask = hoursPerTask;
-    }
+
 
 }
