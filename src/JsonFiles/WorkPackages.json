@@ -3,7 +3,7 @@
         "id": [1,2],
         "estimatedHours": 30,
          "workedHours":2,
-        "weeks": 1
+        "week": 1
 
     },
     {
@@ -11,20 +11,20 @@
         "id": [1,2],
         "estimatedHours": 15,
       "workedHours":2,
-      "weeks": 1
+      "week": 1
     },
     {
         "name": "Input handling",
         "id": [1,2],
         "estimatedHours": 30,
-      "workedHours":2,
-      "weeks": 1
+         "workedHours":2,
+      "week": 1
     }, {
         "name": "Input handling",
         "id": [1,2],
         "estimatedHours": 30,
-  "workedHours":2,
-  "weeks": 1
+        "workedHours":2,
+        "week": 1
 }
 
 ]

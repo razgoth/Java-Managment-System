@@ -43,6 +43,10 @@ public class Workpackage {
         return week;
     }
 
+    public String getIdValue(int i){
+        return id[i];
+    }
+
     @Override
     public String toString() {
         return "Workpackage{" +

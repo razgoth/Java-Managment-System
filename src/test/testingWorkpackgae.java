@@ -2,15 +2,17 @@ package test;
 
 
 import TeamOneMiniProject.Member;
+import TeamOneMiniProject.Workpackage;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.List;
 
-public class testingWithOutMethod {
+public class testingWorkpackgae {
     public static void main(String[] args) {
 
 
@@ -20,14 +22,16 @@ public class testingWithOutMethod {
         {
             try {
                 inputStream = new FileInputStream(new File("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/WorkPackages.json"));
-                TypeReference<List<Member>> typeReference = new TypeReference<List<Member>>() {
+                TypeReference<List<Workpackage>> typeReference = new TypeReference<List<Workpackage>>() {
                 };
 
-                List<Member> member = mapper.readValue(inputStream, typeReference);
-                for (Member r : member) {
+                List<Workpackage> member = mapper.readValue(inputStream, typeReference);
+                for (Workpackage r : member) {
                     System.out.println(r);
                 }
-                System.out.println(member.get(0).getWorkValue("week2"));
+
+                System.out.println(member.get(0).getIdValue(0));
+
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
