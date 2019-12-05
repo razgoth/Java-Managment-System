@@ -1,0 +1,58 @@
+[
+  {
+    "projectName": "Sun Shine",
+    "startWeek": 30,
+    "endWeek": 2,
+    "milestone": [
+      {
+        "id": "123",
+        "name": "ramzi",
+        "estimatedHours": 30,
+        "weeks": [
+          49,
+          50
+        ],
+        "hoursPerTask": {
+          "week": 34,
+          "hours": 38
+        },
+        "startWeek": 1,
+        "endWeek": 3
+      }
+    ],
+    "milestone": [
+      {
+        "id": "123",
+        "name": "ramzi",
+        "estimatedHours": 30,
+        "weeks": [
+          49,
+          50
+        ],
+        "hoursPerTask": {
+          "week": 34,
+          "hours": 38
+        },
+        "startWeek": 1,
+        "endWeek": 3
+      }
+    ],
+    "milestone": [
+      {
+        "id": "123",
+        "name": "ramzi",
+        "estimatedHours": 30,
+        "weeks": [
+          49,
+          50
+        ],
+        "hoursPerTask": {
+          "week": 34,
+          "hours": 38
+        },
+        "startWeek": 1,
+        "endWeek": 3
+      }
+    ]
+  }
+]

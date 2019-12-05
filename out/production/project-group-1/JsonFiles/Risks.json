@@ -1,0 +1,21 @@
+[
+    {
+        "description": "RISK 01",
+        "impact": 1,
+        "probability": 2
+    },
+    {
+        "description": "RISK 02",
+        "impact": 3,
+        "probability": 4
+    },{
+        "description": "RISK 03",
+        "impact": 5,
+        "probability": 6
+    },
+    {
+        "description": "RISK 04",
+        "impact": 6,
+        "probability": 8
+    }
+]
