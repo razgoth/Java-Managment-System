@@ -12,6 +12,8 @@ import java.io.*;
 import java.sql.SQLOutput;
 import java.util.List;
 
+import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
+
 public class testingWorkpackgae {
     public static void main(String[] args) {
 
@@ -45,6 +47,9 @@ public class testingWorkpackgae {
         }
 
     }
+
+
+    List<Workpackage> member = convertJsonToObject("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/WorkPackages.json", List<Workpackage.class>);
 
 
 

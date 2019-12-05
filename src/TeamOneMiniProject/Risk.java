@@ -1,18 +1,18 @@
 package TeamOneMiniProject;
 
-public class Risks {
+public class Risk {
     private String description;
     private double impact;
     private double probability;
 
-    public Risks(String description, double impact, double probability) {
+    public Risk(String description, double impact, double probability) {
         this.description = description;
         this.impact = impact;
         this.probability = probability;
     }
 //    try to understand or remove it
 
-    public Risks() {
+    public Risk() {
 
     }
 

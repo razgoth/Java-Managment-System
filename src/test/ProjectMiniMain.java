@@ -1,6 +1,6 @@
-/*package test;
+/package test;
 
-import TeamOneMiniProject.Risks;
+import TeamOneMiniProject.Risk;
 import TeamOneMiniProject.Workpackage;
 
 import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
@@ -9,15 +9,15 @@ public class ProjectMiniMain {
     public static void main(String[] args) {
 
 
-        Risks[] risks = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\Team one mini-project\\src\\JsonFiles\\Risks.json", Risks[].class);
+        Risk[] risks = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\Team one mini-project\\src\\JsonFiles\\Risks.json", Risk[].class);
         System.out.println(risks[1].getImpact());
         System.out.println("------------------------------");
 
 
         Workpackage[] workPackages = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\Team one mini-project\\src\\JsonFiles\\WorkPackages.json", Workpackage[].class);
-        System.out.println(workPackages[0].getHoursPerTask().getHours());
+        System.out.println(workPackages[0].getHoursPerTask().getHours())
         System.out.println("------------------------------");
-for (Risks r : risks){
+for (Risk r : risks){
     System.out.println(r);
 
 }
@@ -26,11 +26,11 @@ for (Risks r : risks){
         try {
             ObjectMapper mapper = new ObjectMapper();
             InputStream inputStream = new FileInputStream(new File("C:\\Users\\heaven\\Desktop\\Code\\josnss\\risks.json"));
-            TypeReference<List<Risks>> typeReference = new TypeReference<List<Risks>>() {
+            TypeReference<List<Risk>> typeReference = new TypeReference<List<Risk>>() {
             };
 
-           List<Risks> risks1 = mapper.readValue(inputStream, typeReference);
-            for (Risks r : risks) {
+           List<Risk> risks1 = mapper.readValue(inputStream, typeReference);
+            for (Risk r : risks) {
                 System.out.println(r.getImpact());
             }
 
@@ -48,4 +48,4 @@ for (Risks r : risks){
 
 }
 
- */
+
