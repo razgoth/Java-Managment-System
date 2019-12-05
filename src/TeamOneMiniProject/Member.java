@@ -29,6 +29,10 @@ public class Member {
         return work;
     }
 
+    public Integer getWorkValue(String key){
+        return work.get(key);
+    }
+
     @Override
     public String toString() {
         return "Member{" +
