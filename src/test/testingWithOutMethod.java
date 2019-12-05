@@ -19,7 +19,7 @@ public class testingWithOutMethod {
 
         {
             try {
-                inputStream = new FileInputStream(new File("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/Members.json"));
+                inputStream = new FileInputStream(new File("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/WorkPackages.json"));
                 TypeReference<List<Member>> typeReference = new TypeReference<List<Member>>() {
                 };
 

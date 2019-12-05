@@ -1,5 +1,7 @@
 package TeamOneMiniProject;
 
+import java.util.Arrays;
+
 public class Workpackage {
     private String name;
     private String[] id;
@@ -39,5 +41,16 @@ public class Workpackage {
 
     public int getWeek() {
         return week;
+    }
+
+    @Override
+    public String toString() {
+        return "Workpackage{" +
+                "name='" + name + '\'' +
+                ", id=" + Arrays.toString(id) +
+                ", estimatedHours=" + estimatedHours +
+                ", workedHours=" + workedHours +
+                ", week=" + week +
+                '}';
     }
 }
