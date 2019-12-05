@@ -8,16 +8,16 @@ public class Workpackage {
     private String name;
     private double estimatedHours;
     private int[] weeks;
-    private HoursPerTask hoursPerTask;
 
 
 
-    public Workpackage(String id, String name, double estimatedHours, int[] weeks, HoursPerTask hoursPerTask) {
+
+    public Workpackage(String id, String name, double estimatedHours, int[] weeks) {
         this.id = id;
         this.name = name;
         this.estimatedHours = estimatedHours;
         this.weeks = weeks;
-        this.hoursPerTask = hoursPerTask;
+
     }
 
     public Workpackage() {
@@ -48,9 +48,7 @@ public class Workpackage {
 
 
 
-    public HoursPerTask getHoursPerTask() {
-        return hoursPerTask;
-    }
+
 
 
 

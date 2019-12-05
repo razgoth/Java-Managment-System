@@ -1,6 +1,7 @@
 package test;
 
-import TeamOneMiniProject.Risks;
+
+import TeamOneMiniProject.Member;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -18,14 +19,15 @@ public class testingWithOutMethod {
 
         {
             try {
-                inputStream = new FileInputStream(new File("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/Risks.json"));
-                TypeReference<List<Risks>> typeReference = new TypeReference<List<Risks>>() {
+                inputStream = new FileInputStream(new File("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/Members.json"));
+                TypeReference<List<Member>> typeReference = new TypeReference<List<Member>>() {
                 };
 
-                List<Risks> risks = mapper.readValue(inputStream, typeReference);
-                for (Risks r : risks) {
-                    System.out.println(r.getRisk());
+                List<Member> member = mapper.readValue(inputStream, typeReference);
+                for (Member r : member) {
+                    System.out.println(r);
                 }
+                System.out.println(member.get(0).getWorkValue("week2"));
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
