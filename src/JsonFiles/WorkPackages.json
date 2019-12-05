@@ -1,41 +1,29 @@
 [{
-        "id": "id1",
+         "name": "Input handling",
+        "id": [1,2],
+        "estimatedHours": 30,
+        "weeks": 1,
+        "workedHours":2
+    },
+    {
         "name": "Input handling",
-        "estimatedHours": 30,
-        "weeks": [1, 2],
-        "hoursPerTask": {
-            "week1": 1,
-            "week2": 2
-        }
-    },
-    {
-        "id": "id2",
-        "name": "Calculations",
+        "id": [1,2],
         "estimatedHours": 15,
-        "weeks": [3],
-        "hoursPerTask": {
-            "week1": 1,
-            "week2": 2
-        }
+        "weeks": 1,
+        "workedHours":2
     },
     {
-        "id": "id3",
-        "name": "Visualizations",
+        "name": "Input handling",
+        "id": [1,2],
         "estimatedHours": 30,
-        "weeks": [4, 5],
-        "hoursPerTask": {
-            "week1": 1,
-            "week2": 2
-        }
+        "weeks": 1,
+        "workedHours":2
     }, {
-        "id": "id4",
-        "name": "Visualizations",
+        "name": "Input handling",
+        "id": [1,2],
         "estimatedHours": 30,
-        "weeks": [4, 5],
-        "hoursPerTask": {
-            "week1": 1,
-            "week2": 2
-        }
-    }
+        "weeks": 1,
+        "workedHours":2
+}
 
 ]
