@@ -1,55 +1,43 @@
 package TeamOneMiniProject;
 
-import java.util.Arrays;
-import java.util.Objects;
-
 public class Workpackage {
-    private String id;
     private String name;
+    private String[] id;
     private double estimatedHours;
-    private int[] weeks;
+    private double workedHours;
+    private int week;
 
 
 
-
-    public Workpackage(String id, String name, double estimatedHours, int[] weeks) {
-        this.id = id;
+    public Workpackage(String name, String[] id, double estimatedHours, int week, double workedHours) {
         this.name = name;
+        this.id = id;
         this.estimatedHours = estimatedHours;
-        this.weeks = weeks;
-
+        this.workedHours = workedHours;
+        this.week = week;
     }
 
     public Workpackage() {
 
     }
 
-    public String getID() {
-        return id;
-    }
-
-
-
     public String getName() {
         return name;
     }
 
-
+    public String[] getId() {
+        return id;
+    }
 
     public double getEstimatedHours() {
         return estimatedHours;
     }
 
-
-
-    public int[] getWeeks() {
-        return weeks;
+    public double getWorkedHours() {
+        return workedHours;
     }
 
-
-
-
-
-
-
+    public int getWeek() {
+        return week;
+    }
 }

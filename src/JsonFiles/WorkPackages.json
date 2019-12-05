@@ -4,8 +4,8 @@
         "estimatedHours": 30,
         "weeks": [1, 2],
         "hoursPerTask": {
-            "week": 1,
-            "hours": 2
+            "week1": 1,
+            "week2": 2
         }
     },
     {
@@ -14,8 +14,8 @@
         "estimatedHours": 15,
         "weeks": [3],
         "hoursPerTask": {
-            "week": 1,
-            "hours": 2
+            "week1": 1,
+            "week2": 2
         }
     },
     {
@@ -24,8 +24,8 @@
         "estimatedHours": 30,
         "weeks": [4, 5],
         "hoursPerTask": {
-            "week": 1,
-            "hours": 2
+            "week1": 1,
+            "week2": 2
         }
     }, {
         "id": "id4",
@@ -33,8 +33,8 @@
         "estimatedHours": 30,
         "weeks": [4, 5],
         "hoursPerTask": {
-            "week": 1,
-            "hours": 2
+            "week1": 1,
+            "week2": 2
         }
     }
 
