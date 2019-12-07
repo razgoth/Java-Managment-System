@@ -1,0 +1,56 @@
+[
+  {
+    "id": "123",
+    "fullName": "Idrees",
+    "costPerHour": "500",
+    "work": {
+      "week1": 1,
+      "week2": 2
+    }
+  },
+  {
+    "id": "123",
+    "fullName": "Oscar",
+    "costPerHour": "500",
+    "work": {
+      "week1": 1,
+      "week2": 2
+    }
+  },
+  {
+    "id": "123",
+    "fullName": "Ramzi",
+    "costPerHour": "500",
+    "work": {
+      "week1": 1,
+      "week2": 2
+    }
+  },
+  {
+    "id": "123",
+    "fullName": "Freja",
+    "costPerHour": "500",
+    "work": {
+      "week1": 1,
+      "week2": 2
+    }
+  },
+  {
+    "id": "123",
+    "fullName": "Gabriel",
+    "costPerHour": "500",
+    "work": {
+      "week1": 1,
+      "week2": 2
+    }
+  },
+  {
+    "id": "123",
+    "fullName": "Johann",
+    "costPerHour": "500",
+    "work": {
+      "week1": 1,
+      "week2": 2
+    }
+  }
+]
