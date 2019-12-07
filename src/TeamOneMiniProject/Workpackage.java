@@ -1,65 +1,60 @@
 package TeamOneMiniProject;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 public class Workpackage {
-    private String id;
     private String name;
+    private String[] id;
     private double estimatedHours;
-    private int[] weeks;
-    private HoursPerTask hoursPerTask;
+    private double workedHours;
+    private int week;
 
-    public Workpackage(String id, String name, double estimatedHours, int[] weeks, HoursPerTask hoursPerTask) {
-        this.id = id;
+
+
+    public Workpackage(String name, String[] id, double estimatedHours, int week, double workedHours) {
         this.name = name;
+        this.id = id;
         this.estimatedHours = estimatedHours;
-        this.weeks = weeks;
-        this.hoursPerTask = hoursPerTask;
+        this.workedHours = workedHours;
+        this.week = week;
     }
 
     public Workpackage() {
 
     }
 
-    public String getID() {
-        return id;
-    }
-
-    public void setID(String id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String[] getId() {
+        return id;
     }
 
     public double getEstimatedHours() {
         return estimatedHours;
     }
 
-    public void setEstimatedHours(double estimatedHours) {
-        this.estimatedHours = estimatedHours;
+    public double getWorkedHours() {
+        return workedHours;
     }
 
-    public int[] getWeeks() {
-        return weeks;
+    public int getWeek() {
+        return week;
     }
 
-    public void setWeeks(int[] weeks) {
-        this.weeks = weeks;
+    public String getIdValue(int i){
+        return id[i];
     }
 
-    public HoursPerTask getHoursPerTask() {
-        return hoursPerTask;
+    @Override
+    public String toString() {
+        return "Workpackage{" +
+                "name='" + name + '\'' +
+                ", id=" + Arrays.toString(id) +
+                ", estimatedHours=" + estimatedHours +
+                ", workedHours=" + workedHours +
+                ", week=" + week +
+                '}';
     }
-
-    public void setHoursPerTask(HoursPerTask hoursPerTask) {
-        this.hoursPerTask = hoursPerTask;
-    }
-
 }
