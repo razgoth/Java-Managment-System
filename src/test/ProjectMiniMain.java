@@ -1,7 +1,6 @@
 package test;
 
 import TeamOneMiniProject.Risk;
-import TeamOneMiniProject.Workpackage;
 
 import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
 
@@ -9,7 +8,7 @@ public class ProjectMiniMain {
     public static void main(String[] args) {
 
 
-        Risk[] risks = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\Team one mini-project\\src\\JsonFiles\\Risks.json", Risk[].class);
+        Risk[] risks = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\Risks.json", Risk[].class);
         System.out.println(risks[1].getImpact());
         System.out.println("------------------------------");
     }
