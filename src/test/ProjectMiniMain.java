@@ -1,4 +1,4 @@
-/*package test;
+package test;
 
 import TeamOneMiniProject.Risk;
 import TeamOneMiniProject.Workpackage;
@@ -12,8 +12,9 @@ public class ProjectMiniMain {
         Risk[] risks = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\Team one mini-project\\src\\JsonFiles\\Risks.json", Risk[].class);
         System.out.println(risks[1].getImpact());
         System.out.println("------------------------------");
-
-
+    }
+}
+/*
         Workpackage[] workPackages = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\Team one mini-project\\src\\JsonFiles\\WorkPackages.json", Workpackage[].class);
         System.out.println(workPackages[0].getHoursPerTask().getHours())
         System.out.println("------------------------------");
@@ -47,6 +48,5 @@ for (Risk r : risks){
 
 
 }
-
 
 */
