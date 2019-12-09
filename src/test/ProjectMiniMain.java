@@ -12,6 +12,7 @@ public class ProjectMiniMain {
         System.out.println(risks[1].getImpact());
         System.out.println("------------------------------");
     }
+
 }
 /*
         Workpackage[] workPackages = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\Team one mini-project\\src\\JsonFiles\\WorkPackages.json", Workpackage[].class);
