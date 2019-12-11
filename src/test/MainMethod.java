@@ -108,7 +108,7 @@ class mainMethod {
                     }
                 } while (!ID.equals(member[1].getId()) && !ID.equals(member[2].getId()) && !ID.equals(member[3].getId()) && !ID.equals(member[4].getId()) && !ID.equals(member[5].getId()) );
 
-                // CALL CALCULATION FOR 67WITH with memberID AS argument for the method
+                // CALL CALCULATION FOR 7WITH with memberID AS argument for the method
 
             }
 
