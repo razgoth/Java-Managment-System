@@ -9,7 +9,7 @@
     }
   },
   {
-    "id": "123",
+    "id": "234",
     "fullName": "Oscar",
     "costPerHour": "500",
     "work": {
@@ -18,7 +18,7 @@
     }
   },
   {
-    "id": "123",
+    "id": "345",
     "fullName": "Ramzi",
     "costPerHour": "500",
     "work": {
@@ -27,16 +27,16 @@
     }
   },
   {
-    "id": "123",
+    "id": "456",
     "fullName": "Freja",
     "costPerHour": "500",
     "work": {
       "week1": 1,
-      "week2": 2
+      "week2": 5
     }
   },
   {
-    "id": "123",
+    "id": "567",
     "fullName": "Gabriel",
     "costPerHour": "500",
     "work": {
@@ -45,7 +45,7 @@
     }
   },
   {
-    "id": "123",
+    "id": "678",
     "fullName": "Johann",
     "costPerHour": "500",
     "work": {
