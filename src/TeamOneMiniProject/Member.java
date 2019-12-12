@@ -33,6 +33,14 @@ public class Member {
         return work.get(key);
     }
 
+    public int getHoursWorked() {
+        int hoursWorked = 0;
+        for (int value : work.values()){
+            hoursWorked += value;
+        }
+        return hoursWorked;
+    }
+
     @Override
     public String toString() {
         return "Member{" +
