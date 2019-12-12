@@ -1,8 +1,6 @@
 package test;
+
 import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
-
-import java.lang.reflect.Array;
-
 import TeamOneMiniProject.Member;
 import TeamOneMiniProject.Workpackage;
 import java.util.HashMap;
@@ -72,19 +70,32 @@ public class TestFreja {
 				}
 			}
 		}
-		System.out.println(wp);
+		
+		// Checks if data was found and output found data.
+		if(name.equals("") && wp.isEmpty()) {
+			output = "ID "+id+" does not exist in the system.\n";
+		} else if(!(name.equals("")) && wp.isEmpty()){
+			output = name+" has not participated in any workpackages\n";
+		} else if(!(wp.isEmpty()) && name.equals("")){
+			output = "No member with ID "+id+" could be found. ID was found in workpackages: \n";
+			output += wp;
+		} else {
+			output = "Workpackages "+name+" participated in: \n";
+			output += wp;
+		}
+		
+		
 		scanner.close();
 		return output;
 	}
 	
     public static void main(String[] args){
-    	Scanner scanner = new Scanner(System.in);
         Member[] members = convertJsonToObject("C:\\Users\\freja\\mini-project\\project-group-1\\src\\\\JsonFiles\\Members.json", Member[].class);
         Workpackage[] workpackages = convertJsonToObject("C:\\Users\\freja\\mini-project\\project-group-1\\src\\\\JsonFiles\\WorkPackages.json", Workpackage[].class);
          
        
-        //System.out.println(hoursWorked(members));
-        packagesWorked(workpackages, members);
+        System.out.println(hoursWorked(members));
+        System.out.println(packagesWorked(workpackages, members));
     
     }
 }
