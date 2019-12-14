@@ -9,37 +9,23 @@ import java.util.Scanner;
 
 public class TestFreja {
 	
-	public static String hoursWorked(Member[] members) {
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Enter member ID: "); // Getting id input
-		String id = scanner.nextLine();
-		
-		HashMap<String, Integer> work = new HashMap<String, Integer>(); //To catch work-hashmap if id matches member
-		String output = "";
+	public static Member retrieveMember(Member[] members, String id) {
+		for(int i = 0; i < members.length; i++) {
+			if(members[i].getId().equals(id)) {
+				return members[i];
+			}
+		}
+		return null;
+	}
+
+	public static HashMap<String, Double> hoursWorked(Member member) {
 		double totHours = 0;
         
-		//Checking if member id exists. Catches work-hashmap and name of member
-        for (int i = 0; i < members.length; i++) {
-        	if(members[i].getId().contentEquals(id)){
-        		output += members[i].getFullName()+"'s hours worked:\n";
-        		work = (HashMap<String, Integer>) members[i].getWork();
-        	}
-        }
-        
-        // IF id not found, prints message, else calculates worked hours.
-        if(work.isEmpty()) {
-        	output = "A member with ID "+id+" does not exist in the system.";
-        } else {
-        	for(Map.Entry<String, Integer> week : work.entrySet()) {
-    			output += week.getKey()+": "+week.getValue()+" h\n";
+        for(Map.Entry<String, Integer> week : member.getWork().entrySet()) {
     			totHours += (double) week.getValue();
-    		}
-        	output += "Total hours worked: "+totHours+" h";
         }
+        member.getWork().put("total", totHours);
 		
-		
-		scanner.close();
 		return output;
 	}
 	
@@ -92,10 +78,15 @@ public class TestFreja {
     public static void main(String[] args){
         Member[] members = convertJsonToObject("C:\\Users\\freja\\mini-project\\project-group-1\\src\\\\JsonFiles\\Members.json", Member[].class);
         Workpackage[] workpackages = convertJsonToObject("C:\\Users\\freja\\mini-project\\project-group-1\\src\\\\JsonFiles\\WorkPackages.json", Workpackage[].class);
-         
-       
+         Scanner scanner = new Scanner(System.in);
+		
+		
+         System.out.println("Enter member ID: "); // Getting id input
+		String id = scanner.nextLine();
+        
+        
        //System.out.println(hoursWorked(members));
-        System.out.println(packagesWorked(workpackages, members));
+       //System.out.println(packagesWorked(workpackages, members));
     
     }
 }
