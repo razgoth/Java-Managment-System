@@ -22,7 +22,7 @@ public class Calculations {
 		System.out.println("Enter member ID: "); // Getting id input
 		String id = scanner.nextLine();
 		
-		HashMap<String, Integer> work = new HashMap<String, Integer>(); //To catch work-hashmap if id matches member
+		HashMap<String, Double> work = new HashMap<String, Double>(); //To catch work-hashmap if id matches member
 		String output = "";
 		double totHours = 0;
         
@@ -30,7 +30,7 @@ public class Calculations {
         for (int i = 0; i < members.length; i++) {
         	if(members[i].getId().contentEquals(id)){
         		output += members[i].getFullName()+"'s hours worked:\n";
-        		work = (HashMap<String, Integer>) members[i].getWork();
+        		work = (HashMap<String, Double>) members[i].getWork();
         	}
         }
         
@@ -38,9 +38,9 @@ public class Calculations {
         if(work.isEmpty()) {
         	output = "A member with ID "+id+" does not exist in the system.";
         } else {
-        	for(Map.Entry<String, Integer> week : work.entrySet()) {
+        	for(Map.Entry<String, Double> week : work.entrySet()) {
     			output += week.getKey()+": "+week.getValue()+" h\n";
-    			totHours += (double) week.getValue();
+    			totHours += week.getValue();
     		}
         	output += "Total hours worked: "+totHours+" h";
         }

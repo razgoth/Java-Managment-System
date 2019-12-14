@@ -17,17 +17,6 @@ public class TestFreja {
 		}
 		return null;
 	}
-
-	public static HashMap<String, Double> hoursWorked(Member member) {
-		double totHours = 0;
-        
-        for(Map.Entry<String, Integer> week : member.getWork().entrySet()) {
-    			totHours += (double) week.getValue();
-        }
-        member.getWork().put("total", totHours);
-		
-		return output;
-	}
 	
 	public static String packagesWorked(Workpackage[] workpackages, Member[] members) {
 		Scanner scanner = new Scanner(System.in);
@@ -78,15 +67,28 @@ public class TestFreja {
     public static void main(String[] args){
         Member[] members = convertJsonToObject("C:\\Users\\freja\\mini-project\\project-group-1\\src\\\\JsonFiles\\Members.json", Member[].class);
         Workpackage[] workpackages = convertJsonToObject("C:\\Users\\freja\\mini-project\\project-group-1\\src\\\\JsonFiles\\WorkPackages.json", Workpackage[].class);
-         Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 		
 		
-         System.out.println("Enter member ID: "); // Getting id input
+        System.out.println("Enter member ID: "); // Getting id input
 		String id = scanner.nextLine();
+		
+		double totHours = 0;
+		Member foundMember = retrieveMember(members, id);
+		if(foundMember != null) {
+			HashMap<String, Double> work = foundMember.getWork();
+			System.out.println(foundMember.getFullName()+"'s worked hours:");
+			for(Map.Entry<String, Double> week : work.entrySet()) {
+				System.out.println(week.getKey()+": "+week.getValue());
+				totHours += week.getValue();
+			}
+			System.out.println("Total hours worked: "+totHours);
+		} else {
+			System.out.println("A member with id "+id+" was not found");
+		}
         
         
-       //System.out.println(hoursWorked(members));
-       //System.out.println(packagesWorked(workpackages, members));
-    
+       
+		scanner.close();
     }
 }
