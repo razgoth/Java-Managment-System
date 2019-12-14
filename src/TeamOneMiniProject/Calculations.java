@@ -6,6 +6,15 @@ import java.util.Scanner;
 
 public class Calculations {
 	
+	public static Member retrieveMember(Member[] members, String id) {
+		for(int i = 0; i < members.length; i++) {
+			if(members[i].getId().equals(id)) {
+				return members[i];
+			}
+		}
+		return null;
+	}
+	
 	// Method for finding hours worked per week with member ID.
 	public static String hoursWorked(Member[] members) {
 		Scanner scanner = new Scanner(System.in);

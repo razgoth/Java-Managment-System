@@ -94,7 +94,7 @@ public class TestFreja {
         Workpackage[] workpackages = convertJsonToObject("C:\\Users\\freja\\mini-project\\project-group-1\\src\\\\JsonFiles\\WorkPackages.json", Workpackage[].class);
          
        
-        System.out.println(hoursWorked(members));
+       //System.out.println(hoursWorked(members));
         System.out.println(packagesWorked(workpackages, members));
     
     }
