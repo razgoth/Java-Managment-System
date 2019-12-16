@@ -15,7 +15,7 @@ public class Calculations {
 		return null;
 	}
 	
-	// Method for finding hours worked per week with member ID.
+	// Method for finding hours worked per week with member ID. ORGINAL
 	public static String hoursWorked(Member[] members) {
 		Scanner scanner = new Scanner(System.in);
 		
