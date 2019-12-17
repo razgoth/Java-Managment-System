@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Member {
     private String id;
     private String fullName;
-    private int costPerHour;
+    private double costPerHour;
     private HashMap<String, Integer> work;
 
     public Member(){
@@ -21,7 +21,7 @@ public class Member {
         return fullName;
     }
 
-    public int getCostPerHour() {
+    public double getCostPerHour() {
         return costPerHour;
     }
 
