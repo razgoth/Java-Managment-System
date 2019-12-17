@@ -9,12 +9,12 @@ public class RamziTes {
 
     public static double sprintEV(Member[] members, Workpackage[] workpackages, int weeks) {
         double EV = 0;
-        int javaSprint = weeks - 1;
+        int week = weeks - 1;
         if (weeks > 0 && weeks < workpackages.length) {
-            double estimated = workpackages[javaSprint].getEstimatedHours() + workpackages[javaSprint + 1].getEstimatedHours();
-            double worked = workpackages[javaSprint].getWorkedHours() + workpackages[javaSprint + 1].getWorkedHours();
-            int workers = workpackages[javaSprint].getId().length + workpackages[javaSprint + 1].getId().length;
-            int salary = members[javaSprint].getCostPerHour();
+            double estimated = workpackages[week].getEstimatedHours() + workpackages[week + 1].getEstimatedHours();
+            double worked = workpackages[week].getWorkedHours() + workpackages[week + 1].getWorkedHours();
+            int workers = workpackages[week].getId().length + workpackages[week + 1].getId().length;
+            int salary = members[1].getCostPerHour();
             EV = (estimated / worked) * workers * salary;
         } else {
             System.out.println("The weeks you entered does not exist ");
