@@ -32,11 +32,11 @@ public class Calculations {
         }
     }
     // this method prints out all SV
-    public static void AllSV(Workpackage[] workPackages) {
+    public static void AllSV(Workpackage[] workPackages, Member[] members) {
         double TotalSV = 0;
         for(int i = 0 ; i<workPackages.length; i+=2){
             double PV = workPackages[i].getEstimatedHours()+workPackages[i+1].getEstimatedHours();
-            double SV =  EV(workPackages, 4) - ( PV * SALARY_PER_HOUR);
+            double SV =  EV(workPackages, 4) - ( PV * members[i].getCostPerHour());
             TotalSV +=SV;
             System.out.println("Schedule variance in the end of "+ RED + "week "+ (i+2) + RESET + " equals: "+ RED + SV + " SEK"+ RESET);
         }
@@ -57,11 +57,11 @@ public class Calculations {
         }
     }
 
-    public static void AllCV(Workpackage[] workPackages) {
+    public static void AllCV(Workpackage[] workPackages, Member[] members) {
         double TotalCV = 0;
         for(int i = 0 ; i<workPackages.length; i+=2){
             double AC = workPackages[i].getWorkedHours()+workPackages[i+1].getWorkedHours();
-            double CV =  EV(workPackages, 4) - ( AC * SALARY_PER_HOUR);
+            double CV =  EV(workPackages, 4) - ( AC * members[i].getCostPerHour());
             TotalCV +=CV;
             System.out.println("Schedule variance in the end of "+ RED + "week "+ (i+2) + RESET + " equals: "+ RED + CV + " SEK"+ RESET);
         }

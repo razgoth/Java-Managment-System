@@ -1,4 +1,5 @@
 package test;
+import TeamOneMiniProject.Member;
 import TeamOneMiniProject.Risk;
 import TeamOneMiniProject.Workpackage;
 
@@ -15,6 +16,7 @@ public class TestIdrees {
     public static final String BOLD_TEXT = "\033[0;1m";
 
     public static void main(String[] args) {
+        Member[] members = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\project-group-1\\src\\JsonFiles\\Members.json", Member[].class);
         System.out.println("------------------------------------------------");
         Risk[] risks = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\project-group-1\\src\\JsonFiles\\Risks.json", Risk[].class);
         RiskMatrices(risks);
@@ -22,18 +24,17 @@ public class TestIdrees {
         Workpackage[] workPackages = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\project-group-1\\src\\JsonFiles\\WorkPackages.json", Workpackage[].class);
         SV( workPackages, 2);
         System.out.println("------------------------------------------------");
-        AllSV(workPackages);
+        System.out.println("check");
+        AllSV(workPackages, members);
         System.out.println("------------------------------------------------");
 
         CV( workPackages, 4);
         System.out.println("------------------------------------------------");
-        AllCV(workPackages);
+        AllCV(workPackages,members);
 
 
 
     }
-
-
 
 
 }
