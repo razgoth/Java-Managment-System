@@ -27,7 +27,7 @@ public class RamziTes {
 
 
         Workpackage[] workPackages = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\WorkPackages.json", Workpackage[].class);
-        Member[] members = convertJsonToObject(            "C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\Members.json", Member[].class);
+        Member[] members = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\Members.json", Member[].class);
         System.out.println("------------------------------");
         System.out.println(sprintEV(members, workPackages,1));
 
