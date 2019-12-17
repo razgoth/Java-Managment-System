@@ -1,7 +1,11 @@
 package test;
 import TeamOneMiniProject.Member;
+import TeamOneMiniProject.Project;
 import TeamOneMiniProject.Risk;
 import TeamOneMiniProject.Workpackage;
+import org.jfree.ui.RefineryUtilities;
+import visualization.BarCharRisk1;
+import visualization.BarChartRisk;
 
 import static TeamOneMiniProject.Calculations.*;
 import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
@@ -16,6 +20,7 @@ public class TestIdrees {
     public static final String BOLD_TEXT = "\033[0;1m";
 
     public static void main(String[] args) {
+        Project sunShine = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\project-group-1\\src\\JsonFiles\\ProjectSunShine.json", Project.class);
         Member[] members = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\project-group-1\\src\\JsonFiles\\Members.json", Member[].class);
         System.out.println("------------------------------------------------");
         Risk[] risks = convertJsonToObject("C:\\Users\\heaven\\IdeaProjects\\project-group-1\\src\\JsonFiles\\Risks.json", Risk[].class);
@@ -32,6 +37,21 @@ public class TestIdrees {
         System.out.println("------------------------------------------------");
         AllCV(workPackages,members);
 
+        System.out.println("------------------------------------------------");
+
+//        BarChartRisk chart = new BarChartRisk("Risk Matrix",
+//                sunShine.getProjectName());
+//        chart.pack();
+//        RefineryUtilities.centerFrameOnScreen(chart);
+//        chart.setVisible(true);
+
+
+
+        BarCharRisk1 chart01 = new BarCharRisk1("Risk Matrix",
+                "Project Sun Shine");
+        chart01.pack( );
+        RefineryUtilities.centerFrameOnScreen( chart01 );
+        chart01.setVisible( true );
 
 
     }
