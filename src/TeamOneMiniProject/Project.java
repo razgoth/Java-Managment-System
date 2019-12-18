@@ -1,6 +1,5 @@
 package TeamOneMiniProject;
-
-import java.util.Arrays;
+import java.util.HashMap;
 
 public class Project {
 
@@ -8,13 +7,17 @@ public class Project {
     private String projectName;
     private int startWeek;
     private int endWeek;
-    private int[] milestone;
+    private Member[] members;
+    private Risk [] risks;
+    private Workpackage [] workPackages;
 
-    public Project(String projectName, int startWeek, int endWeek, int[] milestone) {
+    public Project(String projectName, int startWeek, int endWeek, Member[] members, Risk[] risks, Workpackage[] workPackages) {
         this.projectName = projectName;
         this.startWeek = startWeek;
         this.endWeek = endWeek;
-        this.milestone = milestone;
+        this.members = members;
+        this.risks = risks;
+        this.workPackages = workPackages;
     }
 
     public Project(){
@@ -33,23 +36,37 @@ public class Project {
         return endWeek;
     }
 
-    public int[] getMilestone() {
-        return milestone;
+    public Member[] getMembers() {
+        return members;
     }
 
-    public int getMilestoneValue(int i){
-        return milestone[i];
+    public Risk[] getRisks() {
+        return risks;
     }
 
-    @Override
-    public String toString() {
-        return "Project{" +
-                "projectName='" + projectName + '\'' +
-                ", startWeek=" + startWeek +
-                ", endWeek=" + endWeek +
-                ", milestone=" + Arrays.toString(milestone) +
-                '}';
+    public Workpackage[] getWorkPackages() {
+        return workPackages;
     }
+
+    public int spentHoursOnTheProject(){
+        int sum = 0;
+        for (int i = 0; i < members.length; i++){
+            sum += members[i].getHoursWorked();
+        }
+        return sum;
+    }
+
+    public HashMap<String, Integer> getSingleHours(){
+        HashMap<String, Integer> singleHours = new HashMap<String, Integer>();
+        for (int i = 0; i < members.length; i++){
+
+            String memberName = members[i].getFullName();
+            int memberHours = members[i].getHoursWorked();
+            singleHours.put(memberName, memberHours);
+        }
+        return singleHours;
+    }
+
 }
 
 

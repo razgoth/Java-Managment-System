@@ -16,8 +16,8 @@ public class TestJohann {
         System.out.println();
 
         HashMap<String,Double> hoursPerMember = Calculations.getHoursPerMember(members);
-        for (String key : hoursPerMember.keySet()){
-            System.out.println(key + ": " + hoursPerMember.get(key));
+        for (String name : hoursPerMember.keySet()){
+            System.out.println(name + ": " + hoursPerMember.get(name));
         }
 
 
