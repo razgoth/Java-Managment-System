@@ -48,24 +48,9 @@ public class Project {
         return workPackages;
     }
 
-    public int spentHoursOnTheProject(){
-        int sum = 0;
-        for (int i = 0; i < members.length; i++){
-            sum += members[i].getHoursWorked();
-        }
-        return sum;
-    }
 
-    public HashMap<String, Integer> getSingleHours(){
-        HashMap<String, Integer> singleHours = new HashMap<String, Integer>();
-        for (int i = 0; i < members.length; i++){
 
-            String memberName = members[i].getFullName();
-            int memberHours = members[i].getHoursWorked();
-            singleHours.put(memberName, memberHours);
-        }
-        return singleHours;
-    }
+
 
 }
 
