@@ -1,5 +1,6 @@
 package TeamOneMiniProject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -15,60 +16,35 @@ public class Calculations {
 		return null;
 	}
 	
-	// Method for finding hours worked per week with member ID. ORGINAL
-	public static String hoursWorked(Member[] members) {
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Enter member ID: "); // Getting id input
-		String id = scanner.nextLine();
-		
-		HashMap<String, Double> work = new HashMap<String, Double>(); //To catch work-hashmap if id matches member
-		String output = "";
+	public static void printHoursHash(Member foundMember){
 		double totHours = 0;
-        
-		//Checking if member id exists. Catches work-hashmap and name of member
-        for (int i = 0; i < members.length; i++) {
-        	if(members[i].getId().contentEquals(id)){
-        		output += members[i].getFullName()+"'s hours worked:\n";
-        		work = (HashMap<String, Double>) members[i].getWork();
-        	}
-        }
-        
-        // IF id not found, prints message, else calculates worked hours.
-        if(work.isEmpty()) {
-        	output = "A member with ID "+id+" does not exist in the system.";
-        } else {
-        	for(Map.Entry<String, Double> week : work.entrySet()) {
-    			output += week.getKey()+": "+week.getValue()+" h\n";
+   		if(foundMember != null) {
+   			HashMap<String, Double> work = foundMember.getWork();
+   			System.out.println(foundMember.getFullName()+"'s worked hours:");
+   			for(Map.Entry<String, Double> week : work.entrySet()) {
+  				System.out.println(week.getKey()+": "+week.getValue());
     			totHours += week.getValue();
-    		}
-        	output += "Total hours worked: "+totHours+" h";
-        }
+   			}
+   			System.out.println("Total hours worked: "+totHours);
+   		} else {
+   			System.out.println("A member with input ID was not found");
+   		}
 		
-		
-		scanner.close();
-		return output;
 	}
 	
-	// Method for finding workpackages worked on with member ID.
-	public static String packagesWorked(Workpackage[] workpackages, Member[] members) {
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Enter member ID: "); // Getting id input
-		String id = scanner.nextLine();
+	public static void printPackagesWorked(Workpackage[] workpackages, Member foundMember3, String id) {
 		
 		String output = "";
 		String wp = "";
 		String name = "";
 		
 		// Checks if id exists in members and catches name.
-		for(int i = 0; i < members.length; i++) {
-			if(members[i].getId().equals(id)) {
-				name = members[i].getFullName();
-			}
+		if (foundMember3 != null) {
+			name = foundMember3.getFullName();
 		}
 		
-		//Checks if id exists in workpackages and catches workapckages participated in
+		
+		//Checks if id exists in workpackages and catches workpackages participated in
 		for(int i = 0; i < workpackages.length; i++) {
 			
 			// Iterates Id-array within workpackage-array
@@ -93,9 +69,41 @@ public class Calculations {
 		}
 		
 		
-		scanner.close();
-		return output;
+		System.out.println(output);
 	}
 	
+	public static ArrayList<String> packagesWorkedGold(Workpackage[] workpackages, Member foundMember3, String id) {
+		ArrayList<String> wp = new ArrayList<String>();
+		String name = "";
+		
+		// Checks if id exists in members and catches name.
+		if (foundMember3 != null) {
+			name = foundMember3.getFullName();
+		}
+		
+		
+		//Checks if id exists in workpackages and catches workpackages participated in
+		for(int i = 0; i < workpackages.length; i++) {
+					
+			// Iterates Id-array within workpackage-array
+			for(int j = 0; j < workpackages[i].getId().length; j++) {
+				if(workpackages[i].getIdValue(j).equals(id)) {
+					wp.add(workpackages[i].getName());
+				}
+			}
+		}
+		
+		
+		// Checks if data was found and output found data.
+		if(name.equals("") && wp.isEmpty()) {
+			System.out.println("ID "+id+" does not exist in the system");
+		} else if(!(name.equals("")) && wp.isEmpty()){
+			System.out.println(name+" has not participated in any workpackages");
+		} else if(!(wp.isEmpty()) && name.equals("")){
+			System.out.println("No member with ID "+id+" could be found.The ID was found in workpackages:");
+		}
+				
+		return wp;
+	}
 	
 }

@@ -152,14 +152,14 @@ public class TestFreja {
    		
    		
    		// ALTERNATIVE MABYE GOLD
-        Member foundMember4 = retrieveMember(members, id);
+        /*Member foundMember4 = retrieveMember(members, id);
         ArrayList<String> packagesWorked = packagesWorkedGold(workpackages, foundMember4, id);
    		if(!(packagesWorked.isEmpty())) {
    			// Do something with list packgesWorked to print a table??
    			System.out.println("MERRY XMAS");
    		}
    		
-   		
+   		*/
         scanner.close();
     }
 }
