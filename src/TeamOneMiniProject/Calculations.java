@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Calculations {
-<<<<<<< src/TeamOneMiniProject/Calculations.java
+
 	public static double EV(Member[] members, Workpackage[] workpackages, int weeks) {
         double EV = 0;
         int week = weeks - 1;
@@ -124,5 +124,4 @@ public class Calculations {
 	
 
     
->>>>>>> src/TeamOneMiniProject/Calculations.java
 }
