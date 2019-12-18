@@ -1,26 +1,26 @@
 [{
         "name": "Input handling",
-        "id": [1,2],
+        "id": [123,456],
         "estimatedHours": 30,
          "workedHours":2,
         "week": 1
 
     },
     {
-        "name": "Input handling",
+        "name": "Interface",
         "id": [1,2],
         "estimatedHours": 15,
       "workedHours":2,
       "week": 1
     },
     {
-        "name": "Input handling",
+        "name": "Calculations",
         "id": [1,2],
         "estimatedHours": 30,
          "workedHours":2,
       "week": 1
     }, {
-        "name": "Input handling",
+        "name": "Graphs",
         "id": [1,2],
         "estimatedHours": 30,
         "workedHours":2,
