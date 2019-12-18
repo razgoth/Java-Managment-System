@@ -7,6 +7,26 @@ import java.util.Scanner;
 
 public class Calculations {
 	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public static Member retrieveMember(Member[] members, String id) {
 		for(int i = 0; i < members.length; i++) {
 			if(members[i].getId().equals(id)) {
