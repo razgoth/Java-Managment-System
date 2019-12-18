@@ -25,5 +25,17 @@
         "estimatedHours": 30,
         "workedHours":2,
         "week": 1
+},{
+  "name": "Input handling",
+  "id": [1,2],
+  "estimatedHours": 60,
+  "workedHours":2,
+  "week": 1
+},{
+  "name": "Input handling",
+  "id": [1,2],
+  "estimatedHours": 60,
+  "workedHours":2,
+  "week": 1
 }
 ]
