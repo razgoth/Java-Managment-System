@@ -47,11 +47,11 @@ package TeamOneMiniProject.Main;
                         break;
 
                     case PROJECT_SCHEDULE:
-                        printProjectSchedule();
+                       // printProjectSchedule();
                         break;
 
                     case TIME_OF_MEMBERS:
-                        printTimeOfMembers();
+                        //printTimeOfMembers();
                         break;
 
                     case MEMBER_PARTICIPATION:
@@ -127,17 +127,18 @@ package TeamOneMiniProject.Main;
 
         }
 
-        private void printProjectSchedule(){
+        /*private void printProjectSchedule(){
             String projectSchedule = projectSunShine.getProjectSchedule();
             System.out.println(projectSchedule);
 
         }
 
-        private void printTimeOfMembers() {
+        /*private void printTimeOfMembers() {
             String timeOfMembers = projectSunShine.timeOfMembers();
             System.out.println(timeOfMembers);
 
         }
+        */
 
         public static void printHoursHash(Member foundMember){
             double totHours = 0;
@@ -174,13 +175,13 @@ package TeamOneMiniProject.Main;
                         printHoursHash(timeByMember);
                         break;
 
-                    case WORKPACKAGES_BY_MEMBER:
+                  /*  case WORKPACKAGES_BY_MEMBER:
                         printMemberSubMenu2();
                         id = readInputString("Enter valid ID of Team Member: \n");
                         String memberParticipation = projectSunShine.getMemberParticipation(id);
                         System.out.println(memberParticipation);
                         break;
-
+*/
                     default:
                         System.out.println("Please input a valid option!");
 
@@ -198,11 +199,10 @@ package TeamOneMiniProject.Main;
         }
 
         private void printMemberSubMenu2(){
-            System.out.println("-----------------------------------------------");
-            System.out.println("\nTeam Member Name:                       ID # ");
-            System.out.println("----------------------------------------------- \n");
-            System.out.println(getFullName() + "                               " + getAllIds());
-
+            HashMap<String, String> memberId = projectSunShine.getMemberId();
+            for(String key : memberId.keySet()) {
+                System.out.println(key+" : "+memberId.get(key));
+            }
         }
 
         public static void main(String[] args) {

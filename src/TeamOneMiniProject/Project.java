@@ -21,7 +21,6 @@ public class Project {
     }
 
     public Project(){
-
     }
 
     public String getProjectName() {
@@ -47,21 +46,6 @@ public class Project {
     public Workpackage[] getWorkPackages() {
         return workPackages;
     }
-
-
-    //--------------------------------------------------------------------------------------------\\
-    //                              New Methods Added By Oscar                                    \\
-    //--------------------------------------------------------------------------------------------\\
-
-    //This method will retrieve a member from the member array (Member[] members)
-    /*public Member getMember(Member[] members) {
-        for(int i = 0; i < members.length; i++) {
-            Member[] members += members[i];
-        }
-
-        return members;
-    }
-    */
 
     public double getEarnedValue(){
         Member[] members = getMembers();
@@ -101,9 +85,9 @@ public class Project {
 
     }
 
-    public String getProjectSchedule() {
+   /* public String getProjectSchedule() {
 
-        String projectSchedule = Calculations.projectSunshine();
+        String projectSchedule = Calculations.projectSunshine(startWeek, endWeek, projectName);
         return projectSchedule;
 
     }
@@ -115,20 +99,27 @@ public class Project {
     }
 */
     public  Member getTimeByMember(String id){
-        Member[] members = getMembers();
 
         Member timeByMember= Calculations.retrieveMember(members, id);
         return timeByMember;
     }
 
-    /*public  String getMemberParticipation(String id){
-        Member[] members = getMembers();
-        Workpackage[] workpackages = getWorkPackages();
+   /* public  String getMemberParticipation(String id){
 
-        String memberParticipation = Calculations.printPackagesWorked(workpackages, members, id);
+        String memberParticipation = Calculations.printPackagesWorked(workPackages, members, id);
         return memberParticipation;
     }
     */
+    public HashMap<String, String> getMemberId(){
+
+        HashMap<String, String> memberId = new HashMap<String, String>();
+        for(int i = 0; i < members.length; i++){
+            memberId.put(members[i].getFullName(), members[i].getId());
+
+        }
+        return memberId;
+
+    }
 }
 
 

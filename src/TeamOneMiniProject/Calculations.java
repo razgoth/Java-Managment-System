@@ -167,15 +167,11 @@ public class Calculations {
         return SV;
     }
 
-    public static void projectSunshine(Project[] project) {
-
-        double startWeek = project[0].getStartWeek();
-        double endWeek = project[0].getEndWeek();
-        String activity = project[0].getProjectName();
+    public static void projectSunshine(int startWeek, int endWeek, String name) {
 
         System.out.println(startWeek);
         System.out.println(endWeek);
-        System.out.println(activity);
+        System.out.println(name);
 
     }
 }
