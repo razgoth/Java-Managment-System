@@ -1,10 +1,12 @@
 package TeamOneMiniProject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 
 public class Calculations {
-<<<<<<< HEAD
+
 	
 	public static Member retrieveMember(Member[] members, String id) {
 		for(int i = 0; i < members.length; i++) {
@@ -105,7 +107,6 @@ public class Calculations {
 		return wp;
 	}
 
-=======
 
     public static Double getHoursOnProject (Member[] members){
         Double  sum = 0.0;
@@ -181,5 +182,4 @@ public class Calculations {
         }
         return SV;
     }
->>>>>>> master
 }
