@@ -53,12 +53,10 @@ public Project (){};
 
     }
 
-    public double getScheduleVariance(){
-        Member[] members = getMembers();
-        Workpackage[] workpackages = getWorkPackages();
-        int weeks = 4;
+    public double getScheduleVariance(int weeks){
 
-        double SV = Calculations.SV(members, workpackages, weeks);
+
+        double SV = Calculations.SV(members, workPackages, weeks);
         return SV;
 
     }
@@ -77,31 +75,31 @@ public Project (){};
 
     }
 
-   /* public String getProjectSchedule() {
+   public String getProjectSchedule() {
 
         String projectSchedule = Calculations.projectSunshine(startWeek, endWeek, projectName);
         return projectSchedule;
 
     }
 
-   /* public String timeOfMembers(){
+   public double getTimeOfMembers(){
 
-        String timeOfMembers = Calculations.timeOfMembers();
+        double timeOfMembers = Calculations.getHoursOnProject(members);
         return timeOfMembers;
     }
-*/
+
     public  Member getTimeByMember(String id){
 
         Member timeByMember= Calculations.retrieveMember(members, id);
         return timeByMember;
     }
 
-   /* public  String getMemberParticipation(String id){
+   public  String getMemberParticipation(String id){
 
         String memberParticipation = Calculations.printPackagesWorked(workPackages, members, id);
         return memberParticipation;
     }
-    */
+
     public HashMap<String, String> getMemberId(){
 
         HashMap<String, String> memberId = new HashMap<String, String>();

@@ -16,11 +16,13 @@ public class Calculations {
 		return null;
 	}
 
-	public static void printPackagesWorked(Workpackage[] workpackages, Member foundMember3, String id) {
+	public static String printPackagesWorked(Workpackage[] workpackages,  Member[] members, String id) {
 
 		String output = "";
 		String wp = "";
 		String name = "";
+
+        Member foundMember3 = retrieveMember(members, id);
 
 		// Checks if id exists in members and catches name.
 		if (foundMember3 != null) {
@@ -53,7 +55,7 @@ public class Calculations {
 		}
 
 
-		System.out.println(output);
+		return output;
 	}
 
 	public static ArrayList<String> packagesWorkedGold(Workpackage[] workpackages, Member foundMember3, String id) {
@@ -91,8 +93,8 @@ public class Calculations {
 	}
 
 
-    public static Double getHoursOnProject (Member[] members){
-        Double  sum = 0.0;
+    public static double getHoursOnProject (Member[] members){
+        double  sum = 0.0;
         for (int i = 0; i < members.length; i++){
             sum += members[i].getHoursWorked();
         }
@@ -123,7 +125,7 @@ public class Calculations {
     public static double EV(Member[] members, Workpackage[] workpackages, int weeks) {
         double EV = 0;
         int week = weeks - 1;
-        if (weeks > 0 && weeks < workpackages.length ) {
+        if (weeks > 0 && weeks < workpackages.length && weeks%2 !=0) {
             double estimated = workpackages[week].getEstimatedHours() + workpackages[week + 1].getEstimatedHours();
             double worked = workpackages[week].getWorkedHours() + workpackages[week + 1].getWorkedHours();
             int workers = workpackages[week].getId().length + workpackages[week + 1].getId().length;
@@ -146,7 +148,7 @@ public class Calculations {
         }
         else {
             double AC = (workPackages[weekIndex].getWorkedHours()+ workPackages[weekIndex - 1].getWorkedHours())* members[0].getCostPerHour();
-            cv = (EV(members, workPackages, week) - AC);
+            cv = (EV(members, workPackages, weekIndex) - AC);
         }
         return cv;
     }
@@ -161,16 +163,15 @@ public class Calculations {
             System.out.println("You have entered invalid week number. The Schedule variance can only be calculated in the end of each sprint i.e: week 2, 4, 6, ect.");
         }else {
             double PV = workPackages[weekIndex].getEstimatedHours() + workPackages[weekIndex - 1].getEstimatedHours();
-            SV = (EV(members, workPackages, week) - ( PV * members[0].getCostPerHour()));
+            SV = (EV(members, workPackages, weekIndex) - ( PV * members[0].getCostPerHour()));
         }
         return SV;
     }
 
-    public static void projectSunshine(int startWeek, int endWeek, String name) {
+    public static String projectSunshine(int startWeek, int endWeek, String name) {
 
-        System.out.println(startWeek);
-        System.out.println(endWeek);
-        System.out.println(name);
+	    String output = "Start week: "+startWeek+"EndWeek: "+endWeek+"Name: "+name;
 
+        return output;
     }
 }

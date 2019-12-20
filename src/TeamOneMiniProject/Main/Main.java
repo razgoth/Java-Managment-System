@@ -47,11 +47,11 @@ public class Main {
                         break;
 
                     case PROJECT_SCHEDULE:
-                       // printProjectSchedule();
+                        printProjectSchedule();
                         break;
 
                     case TIME_OF_MEMBERS:
-                        //printTimeOfMembers();
+                        printTimeOfMembers();
                         break;
 
                     case MEMBER_PARTICIPATION:
@@ -112,9 +112,10 @@ public class Main {
         }
 
         private void printScheduleVariance(){
-            double scheduleVariance = projectSunShine.getScheduleVariance();
-            System.out.println(scheduleVariance);
-
+            for(int i = 2 ; i<projectSunShine.getWorkPackages().length ; i += 2) {
+                double scheduleVariance = projectSunShine.getScheduleVariance(i);
+                System.out.println(scheduleVariance);
+            }
         }
 
         private void printCostVariance(){
@@ -130,18 +131,18 @@ public class Main {
 
         }
 
-        /*private void printProjectSchedule(){
+        private void printProjectSchedule(){
             String projectSchedule = projectSunShine.getProjectSchedule();
             System.out.println(projectSchedule);
 
         }
 
-        /*private void printTimeOfMembers() {
-            String timeOfMembers = projectSunShine.timeOfMembers();
+        private void printTimeOfMembers() {
+            double timeOfMembers = projectSunShine.getTimeOfMembers();
             System.out.println(timeOfMembers);
 
         }
-        */
+
 
         public static void printHoursHash(Member foundMember){
             double totHours = 0;
@@ -160,6 +161,7 @@ public class Main {
 
         private final int TIME_BY_MEMBER = 1;
         private final int WORKPACKAGES_BY_MEMBER = 2;
+        private final int GO_BACK = 3;
 
         private void printMemberParticipation() {
 
@@ -178,13 +180,17 @@ public class Main {
                         printHoursHash(timeByMember);
                         break;
 
-                  /*  case WORKPACKAGES_BY_MEMBER:
+                  case WORKPACKAGES_BY_MEMBER:
                         printMemberSubMenu2();
                         id = readInputString("Enter valid ID of Team Member: \n");
                         String memberParticipation = projectSunShine.getMemberParticipation(id);
                         System.out.println(memberParticipation);
                         break;
-*/
+
+                    case GO_BACK:
+                        System.out.println("You are going home, sailor!");
+                        break;
+
                     default:
                         System.out.println("Please input a valid option!");
 
@@ -198,6 +204,7 @@ public class Main {
             System.out.println("\n***Welcome To Team Member Data ***\n ");
             System.out.println("1: Get the time spent by a team member of you choice");
             System.out.println("2: Get the work packages worked on by a team member of you choice");
+            System.out.println( "Go back to main menu! ");
 
         }
 
