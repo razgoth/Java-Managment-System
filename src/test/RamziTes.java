@@ -25,12 +25,13 @@ public class RamziTes {
 
     public static void main(String[] args) {
 
+      //  Project projects = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\WorkPackages.json", Project.class);
 
         Workpackage[] workPackages = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\WorkPackages.json", Workpackage[].class);
         Member[] members = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\Members.json", Member[].class);
         System.out.println("------------------------------");
         System.out.println(EV(members, workPackages,2));
-
+      //  EV(projects.getStartWeek()=;
     }
 }
 
