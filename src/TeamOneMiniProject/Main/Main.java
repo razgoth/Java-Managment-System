@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-    import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
+import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
 
 public class Main {
         Scanner scanner = new Scanner((System.in));
@@ -22,54 +22,59 @@ public class Main {
         private final int MEMBER_PARTICIPATION = 7;
         private final int QUIT = 8;
 
-        public void run() {
-            int userInputMenu;
 
-            do {
-                printMenu();
-                userInputMenu = readInputInt("Enter option: ");
+        public void run () {
+        int userInputMenu;
+      try{  do {
+            printMenu();
+            userInputMenu = readInputInt("Enter option: ");
 
-                switch (userInputMenu) {
-                    case EARNED_VALUE:
-                        printEarnedValue();
-                        break;
+            switch (userInputMenu) {
+                case EARNED_VALUE:
+                    printEarnedValue();
+                    break;
 
-                    case SCHEDULE_VARIANCE:
-                        printScheduleVariance();
-                        break;
+                case SCHEDULE_VARIANCE:
+                    printScheduleVariance();
+                    break;
 
-                    case COST_VARIANCE:
-                        printCostVariance();
-                        break;
+                case COST_VARIANCE:
+                    printCostVariance();
+                    break;
 
-                    case RISK_MATRIX:
-                        printRiskMatrix();
-                        break;
+                case RISK_MATRIX:
+                    printRiskMatrix();
+                    break;
 
-                    case PROJECT_SCHEDULE:
-                        printProjectSchedule();
-                        break;
+                case PROJECT_SCHEDULE:
+                    printProjectSchedule();
+                    break;
 
-                    case TIME_OF_MEMBERS:
-                        printTimeOfMembers();
-                        break;
+                case TIME_OF_MEMBERS:
+                    printTimeOfMembers();
+                    break;
 
-                    case MEMBER_PARTICIPATION:
-                        printMemberParticipation();
-                        break;
+                case MEMBER_PARTICIPATION:
+                    printMemberParticipation();
+                    break;
 
-                    case QUIT:
-                        System.out.println("Thank you for using the project. Hopefully Project Sunshine was successful!");
-                        return;
+                case QUIT:
+                    System.out.println("Thank you for using the project. Hopefully Project Sunshine was successful!");
+                    return;
 
-                    default:
-                        System.out.println("Please input a valid option!");
+                default:
+                    System.out.println("Please input a valid option!");
 
-                }
+            }
 
-            }while (userInputMenu != QUIT);
 
-        }
+        } while (userInputMenu != QUIT);}catch (Exception e){
+          System.out.println("Did you think you can break the code?");
+
+      }
+
+    }
+
 
         private void printMenu() {
             System.out.println("\n***Welcome To Team One ***\n ");
