@@ -17,22 +17,6 @@ public class Calculations {
 		return null;
 	}
 
-	public static void printHoursHash(Member foundMember){
-		double totHours = 0;
-   		if(foundMember != null) {
-   			HashMap<String, Double> work = foundMember.getWork();
-   			System.out.println(foundMember.getFullName()+"'s worked hours:");
-   			for(Map.Entry<String, Double> week : work.entrySet()) {
-  				System.out.println(week.getKey()+": "+week.getValue());
-    			totHours += week.getValue();
-   			}
-   			System.out.println("Total hours worked: "+totHours);
-   		} else {
-   			System.out.println("A member with input ID was not found");
-   		}
-
-	}
-
 	public static void printPackagesWorked(Workpackage[] workpackages, Member foundMember3, String id) {
 
 		String output = "";
