@@ -28,4 +28,6 @@ hs_err_pid*
 Members.java
 MapsTesting.java
 TestRamzi.java
-
+*.class
+*.patch
+/bin/

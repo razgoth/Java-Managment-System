@@ -6,10 +6,10 @@ public class Member {
     private String id;
     private String fullName;
     private int costPerHour;
-    private HashMap<String, Integer> work;
+    private HashMap<String, Double> work;
 
     public Member(){
-        work = new HashMap<String, Integer>();
+        work = new HashMap<String, Double>();
     }
 
     //getters
@@ -25,12 +25,20 @@ public class Member {
         return costPerHour;
     }
 
-    public HashMap<String, Integer> getWork() {
+    public HashMap<String, Double> getWork() {
         return work;
     }
 
-    public Integer getWorkValue(String key){
+    public Double getWorkValue(String key){
         return work.get(key);
+    }
+
+    public Double getHoursWorked() {
+        Double hoursWorked = 0.0;
+        for (Double value : work.values()){
+            hoursWorked += value;
+        }
+        return hoursWorked;
     }
 
     @Override

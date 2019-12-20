@@ -1,9 +1,111 @@
-[
-  {
-    "projectName": "Sun Shine",
-    "startWeek": 30,
-    "endWeek": 2,
-    "milestone": [1,4,6]
-
-  }
+{
+  "projectName": "Sun Shine",
+  "startWeek": 30,
+  "endWeek": 3,
+  "members": [
+    {
+      "id": "123",
+      "fullName": "Idrees",
+      "costPerHour": "500",
+      "work": {
+        "week1": 1,
+        "week2": 4
+      }
+    },
+    {
+      "id": "123",
+      "fullName": "Oscar",
+      "costPerHour": "500",
+      "work": {
+        "week1": 10,
+        "week2": 2
+      }
+    },
+    {
+      "id": "123",
+      "fullName": "Ramzi",
+      "costPerHour": "500",
+      "work": {
+        "week1": 1,
+        "week2": 10
+      }
+    },
+    {
+      "id": "123",
+      "fullName": "Freja",
+      "costPerHour": "500",
+      "work": {
+        "week1": 5,
+        "week2": 2
+      }
+    },
+    {
+      "id": "123",
+      "fullName": "Gabriel",
+      "costPerHour": "500",
+      "work": {
+        "week1": 1,
+        "week2": 90
+      }
+    },
+    {
+      "id": "123",
+      "fullName": "Johann",
+      "costPerHour": "500",
+      "work": {
+        "week1": 1,
+        "week2": 70
+      }
+    }
+  ],
+  "risks": [
+    {
+      "description": "RISK 01",
+      "impact": 1,
+      "probability": 2
+    },
+    {
+      "description": "RISK 02",
+      "impact": 3,
+      "probability": 4
+    },{
+      "description": "RISK 03",
+      "impact": 5,
+      "probability": 6
+    },
+    {
+      "description": "RISK 04",
+      "impact": 6,
+      "probability": 8
+    }
+  ],
+  "workPackages": [
+    {
+      "name": "Input handling",
+      "id": [1,2],
+      "estimatedHours": 30,
+      "workedHours":2,
+      "week": 1
+    },
+    {
+      "name": "Input handling",
+      "id": [1,2],
+      "estimatedHours": 15,
+      "workedHours":2,
+      "week": 1
+    },
+    {
+      "name": "Input handling",
+      "id": [1,2],
+      "estimatedHours": 30,
+      "workedHours":2,
+      "week": 1
+    }, {
+      "name": "Input handling",
+      "id": [1,2],
+      "estimatedHours": 30,
+      "workedHours":2,
+      "week": 1
+    }
   ]
+}
