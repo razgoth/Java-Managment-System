@@ -2,7 +2,6 @@ package TeamOneMiniProject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 
 public class Calculations {
@@ -124,7 +123,7 @@ public class Calculations {
     public static double EV(Member[] members, Workpackage[] workpackages, int weeks) {
         double EV = 0;
         int week = weeks - 1;
-        if (weeks > 0 && weeks < workpackages.length && (weeks % 2 == 0)) {
+        if (weeks > 0 && weeks < workpackages.length ) {
             double estimated = workpackages[week].getEstimatedHours() + workpackages[week + 1].getEstimatedHours();
             double worked = workpackages[week].getWorkedHours() + workpackages[week + 1].getWorkedHours();
             int workers = workpackages[week].getId().length + workpackages[week + 1].getId().length;

@@ -1,17 +1,17 @@
 package TeamOneMiniProject.Main;
 
     import TeamOneMiniProject.Member;
-    import TeamOneMiniProject.Project;
+import TeamOneMiniProject.Project;
 
-    import java.util.Scanner;
-                import java.util.Arrays;
-                import java.util.ArrayList;
-                import java.util.HashMap;
-                import java.util.Map;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
-    public class Main {
+    import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
+
+public class Main {
         Scanner scanner = new Scanner((System.in));
-        Project projectSunShine = new Project();
+        Project projectSunShine = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\ProjectSunShine.json", Project.class) ;
 
         private final int EARNED_VALUE = 1;
         private final int SCHEDULE_VARIANCE = 2;
@@ -104,8 +104,10 @@ package TeamOneMiniProject.Main;
         }
 
         private void printEarnedValue(){
-            double earnedValue = projectSunShine.getEarnedValue();
-            System.out.println(earnedValue);
+            for(int i = 1 ; i<projectSunShine.getWorkPackages().length ; i += 2) {
+                double earnedValue = projectSunShine.getEarnedValue(i);
+                System.out.println(earnedValue);
+            }
 
         }
 
@@ -116,8 +118,9 @@ package TeamOneMiniProject.Main;
         }
 
         private void printCostVariance(){
-            double costVariance = projectSunShine.getCostVariance();
-            System.out.println(costVariance);
+            for (int  i = 2 ; i <projectSunShine.getWorkPackages().length; i +=2){
+            double costVariance = projectSunShine.getCostVariance(i);
+            System.out.println(costVariance);}
 
         }
 

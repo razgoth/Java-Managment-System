@@ -19,9 +19,7 @@ public class Project {
         this.risks = risks;
         this.workPackages = workPackages;
     }
-
-    public Project(){
-    }
+public Project (){};
 
     public String getProjectName() {
         return projectName;
@@ -47,12 +45,10 @@ public class Project {
         return workPackages;
     }
 
-    public double getEarnedValue(){
-        Member[] members = getMembers();
-        Workpackage[] workpackages = getWorkPackages();
-        int weeks = getEndWeek();
 
-        double EV = Calculations.EV(members, workpackages, weeks);
+    public double getEarnedValue(int weeks){
+
+        double EV = Calculations.EV(members, workPackages, weeks);
         return EV;
 
     }
@@ -60,19 +56,15 @@ public class Project {
     public double getScheduleVariance(){
         Member[] members = getMembers();
         Workpackage[] workpackages = getWorkPackages();
-        int weeks = getEndWeek();
+        int weeks = 4;
 
         double SV = Calculations.SV(members, workpackages, weeks);
         return SV;
 
     }
 
-    public double getCostVariance(){
-        Member[] members = getMembers();
-        Workpackage[] workpackages = getWorkPackages();
-        int weeks = getEndWeek();
-
-        double CV = Calculations.CV(members, workpackages, weeks);
+    public double getCostVariance(int weeks){
+      double CV = Calculations.CV(getMembers(), getWorkPackages(), weeks);
         return CV;
 
     }
