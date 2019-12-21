@@ -11,7 +11,7 @@ class mainMethod {
 
 
     public static void main(String[] args) {
-        Member[] member = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\members.json", Member[].class);
+        Member[] member = convertJsonToObject("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/ProjectSunShine.json", Member[].class);
 
         String ID;
         String Answer;

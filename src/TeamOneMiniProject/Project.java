@@ -82,9 +82,9 @@ public Project (){};
 
     }
 
-   public double getTimeOfMembers(){
+   public HashMap<String, Double> getTimeOfMembers(){
 
-        double timeOfMembers = Calculations.getHoursOnProject(members);
+        HashMap<String, Double> timeOfMembers = Calculations.getHoursOnProject(members);
         return timeOfMembers;
     }
 

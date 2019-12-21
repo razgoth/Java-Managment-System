@@ -93,25 +93,20 @@ public class Calculations {
 	}
 
 
-    public static double getHoursOnProject (Member[] members){
+    public static HashMap<String, Double> getHoursOnProject (Member[] members){
         double  sum = 0.0;
-        for (int i = 0; i < members.length; i++){
-            sum += members[i].getHoursWorked();
-        }
-        return sum;
-    }
-
-    public static HashMap<String, Double> getHoursPerMember (Member [] members){
         HashMap<String, Double> hoursPerMember = new HashMap<>();
-
         for (int i = 0; i < members.length; i++){
             String name = members[i].getFullName();
             Double hours = members[i].getHoursWorked();
+            sum += hours;
             hoursPerMember.put(name, hours);
         }
-        return hoursPerMember;
 
+        hoursPerMember.put("Total", sum);
+        return hoursPerMember;
     }
+
 
     // this method gets an array of risk and return a HashMap of Description and risk
     public static HashMap<String, Double> riskMatrix(Risk[] risks) {

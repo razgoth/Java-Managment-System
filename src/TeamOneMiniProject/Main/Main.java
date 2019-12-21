@@ -1,6 +1,6 @@
 package TeamOneMiniProject.Main;
 
-    import TeamOneMiniProject.Member;
+import TeamOneMiniProject.Member;
 import TeamOneMiniProject.Project;
 
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
 
 public class Main {
         Scanner scanner = new Scanner((System.in));
-        Project projectSunShine = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\ProjectSunShine.json", Project.class) ;
+        Project projectSunShine = convertJsonToObject("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/ProjectSunShine.json", Project.class) ;
 
         private final int EARNED_VALUE = 1;
         private final int SCHEDULE_VARIANCE = 2;
@@ -109,7 +109,7 @@ public class Main {
         }
 
         private void printEarnedValue(){
-            for(int i = 1 ; i<projectSunShine.getWorkPackages().length ; i += 2) {
+            for(int i = 1 ; i < projectSunShine.getWorkPackages().length ; i += 2) {
                 double earnedValue = projectSunShine.getEarnedValue(i);
                 System.out.println(earnedValue);
             }
@@ -117,7 +117,7 @@ public class Main {
         }
 
         private void printScheduleVariance(){
-            for(int i = 2 ; i<projectSunShine.getWorkPackages().length ; i += 2) {
+            for(int i = 2 ; i < projectSunShine.getWorkPackages().length ; i += 2) {
                 double scheduleVariance = projectSunShine.getScheduleVariance(i);
                 System.out.println(scheduleVariance);
             }
@@ -143,9 +143,11 @@ public class Main {
         }
 
         private void printTimeOfMembers() {
-            double timeOfMembers = projectSunShine.getTimeOfMembers();
+            HashMap<String, Double> timeOfMembers = projectSunShine.getTimeOfMembers();
             System.out.println(timeOfMembers);
-
+            for (String key : timeOfMembers.keySet()) {
+                System.out.println(key + ": " + timeOfMembers.get(key));
+            }
         }
 
 
@@ -209,7 +211,7 @@ public class Main {
             System.out.println("\n***Welcome To Team Member Data ***\n ");
             System.out.println("1: Get the time spent by a team member of you choice");
             System.out.println("2: Get the work packages worked on by a team member of you choice");
-            System.out.println( "Go back to main menu! ");
+            System.out.println("3: Go back to main menu! ");
 
         }
 
@@ -225,5 +227,8 @@ public class Main {
             projectManagementProgram.run();
 
         }
+
+
+
 
     }

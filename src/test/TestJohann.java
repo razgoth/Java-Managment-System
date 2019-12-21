@@ -12,13 +12,13 @@ public class TestJohann {
 
         Member[] members = convertJsonToObject("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/Members.json", Member[].class);
 
-        System.out.println(Calculations.getHoursPerMember(members));
+       // System.out.println(Calculations.getHoursPerMember(members));
         System.out.println();
 
-        HashMap<String,Double> hoursPerMember = Calculations.getHoursPerMember(members);
-        for (String name : hoursPerMember.keySet()){
-            System.out.println(name + ": " + hoursPerMember.get(name));
-        }
+      //  HashMap<String,Double> hoursPerMember = Calculations.getHoursPerMember(members);
+      //  for (String name : hoursPerMember.keySet()){
+     //       System.out.println(name + ": " + hoursPerMember.get(name));
+     //   }
 
 
 
