@@ -11,7 +11,7 @@ import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
 
 public class Main {
         Scanner scanner = new Scanner((System.in));
-        Project projectSunShine = convertJsonToObject("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/ProjectSunShine.json", Project.class) ;
+    Project projectSunShine = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\ProjectSunShine.json", Project.class) ;
 
         private final int EARNED_VALUE = 1;
         private final int SCHEDULE_VARIANCE = 2;
@@ -109,9 +109,13 @@ public class Main {
         }
 
         private void printEarnedValue(){
+            System.out.println("Earned Value\n");
+
             for(int i = 1 ; i < projectSunShine.getWorkPackages().length ; i += 2) {
                 double earnedValue = projectSunShine.getEarnedValue(i);
-                System.out.println(earnedValue);
+
+                System.out.println("Earned Value for week " + i + " and week " +( i+1) + "  : "+earnedValue);
+
             }
 
         }
@@ -137,8 +141,17 @@ public class Main {
         }
 
         private void printProjectSchedule(){
-            String projectSchedule = projectSunShine.getProjectSchedule();
-            System.out.println(projectSchedule);
+
+            System.out.println("Project Schedule\n");
+            System.out.println("Project Name: " + projectSunShine.getProjectName());
+
+            System.out.println("Start Week: " + projectSunShine.getStartWeek());
+            System.out.println("End Week: " + projectSunShine.getEndWeek());
+
+            // since this is not a calculation we do not need to have a method in calculations that prints all
+
+          //  String projectSchedule = projectSunShine.getProjectSchedule();
+          //  System.out.println(projectSchedule);
 
         }
 
