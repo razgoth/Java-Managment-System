@@ -132,8 +132,17 @@ public class Calculations {
         return EV;
     }
 
+    public static String ActivitySchedule (Workpackage[] workpackages, int weeks) {
 
-    public static double CV(Member[] members, Workpackage[] workPackages, int week) {
+	    String activityName = workpackages[weeks].getName();
+	    int weekName = workpackages[weeks].getWeek();
+        System.out.printf("%s %20s %4s %10d %4s", "|" , activityName, "|" , weekName, "|");
+        String result = "";
+        return result;
+    }
+
+
+        public static double CV(Member[] members, Workpackage[] workPackages, int week) {
         int weekIndex = week - 1;
         double cv = 0;
         if (weekIndex >= workPackages.length || weekIndex == 0) {

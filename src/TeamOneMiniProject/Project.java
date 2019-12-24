@@ -81,6 +81,14 @@ public Project (){};
         return projectSchedule;
 
     }
+    // new method
+    public String getActivitySchedule(int weeks) {
+
+
+        String activitySchedule = Calculations.ActivitySchedule(workPackages, weeks);
+        return activitySchedule;
+
+    }
 
    public HashMap<String, Double> getTimeOfMembers(){
 
