@@ -135,19 +135,27 @@ public class Calculations {
 
     public static String ActivitySchedule (Workpackage[] workpackages, int weeks) {
         int weekName = 0;
-	    String activityName = workpackages[weeks].getName();
-	    for(int i = 0; i<workpackages[weeks].getWeek().length; i++) {
-            weekName = (workpackages[weeks].getWeekValue(i));
-        }
-        //System.out.printf("%20s " , activityName );
+        boolean again = true;
 
-        System.out.printf("%20s %15d " , activityName , weekName);
+        String activityName = workpackages[weeks].getName();
+        System.out.printf("%20s ", activityName);
+
+        for (int i = 0; i < workpackages[weeks].getWeek().length; i++) {
+            weekName = (workpackages[weeks].getWeekValue(i));
+
+            if (workpackages[weeks].getWeek().length == 1 ) {
+                System.out.printf(" %15d ", weekName);
+
+            } else {
+                    again = false;
+                    System.out.printf(" %15d ", weekName);
+                }
+            }
         String result = "";
         return result;
     }
 
-
-        public static double CV(Member[] members, Workpackage[] workPackages, int week) {
+    public static double CV(Member[] members, Workpackage[] workPackages, int week) {
         int weekIndex = week - 1;
         double cv = 0;
         if (weekIndex >= workPackages.length || weekIndex == 0) {
