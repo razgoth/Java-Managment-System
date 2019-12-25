@@ -141,7 +141,7 @@ public class Calculations {
         }
         //System.out.printf("%20s " , activityName );
 
-        System.out.printf("%20s %10d " , activityName , weekName);
+        System.out.printf("%20s %15d " , activityName , weekName);
         String result = "";
         return result;
     }
