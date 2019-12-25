@@ -11,7 +11,7 @@ import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
 
 public class Main {
         Scanner scanner = new Scanner((System.in));
-    Project projectSunShine = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\ProjectSunShine.json", Project.class) ;
+    Project projectSunShine = convertJsonToObject("src\\JsonFiles\\ProjectSunShine.json", Project.class) ;
 
         private final int EARNED_VALUE = 1;
         private final int SCHEDULE_VARIANCE = 2;
@@ -123,20 +123,23 @@ public class Main {
         private void printScheduleVariance(){
             for(int i = 2 ; i < projectSunShine.getWorkPackages().length ; i += 2) {
                 double scheduleVariance = projectSunShine.getScheduleVariance(i);
-                System.out.println(scheduleVariance);
+                System.out.println("Schedule variance in the end of week " + (i ) + " : " + scheduleVariance);
             }
         }
 
         private void printCostVariance(){
             for (int  i = 2 ; i <projectSunShine.getWorkPackages().length; i +=2){
             double costVariance = projectSunShine.getCostVariance(i);
-            System.out.println(costVariance);}
+                System.out.println("Cost variance in the end of week " + (i ) + " : " + costVariance);
+            }
 
         }
 
         private void printRiskMatrix(){
             HashMap<String, Double>  riskMatrix = projectSunShine.getRiskMatrix();
-            System.out.println(riskMatrix);
+            for (String key : riskMatrix.keySet()) {
+                System.out.println(key + ": " + riskMatrix.get(key));
+            }
 
         }
 
