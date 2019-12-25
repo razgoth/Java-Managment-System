@@ -153,15 +153,10 @@ public class Main {
         System.out.println("Start Week: " + projectSunShine.getStartWeek());
         System.out.println("End Week: " + projectSunShine.getEndWeek());
 
-        System.out.printf("\n%s %20s %4s %10s %4s %n\n", "|", "Activity Name", "|", "Week", "|");
+        System.out.printf("\n%s %20s %4s %10s %4s %n\n", "|", "Work Package", "|", "Week", "|");
         for (int i = 0; i < projectSunShine.getWorkPackages().length; i++) {
             System.out.println(projectSunShine.getActivitySchedule(i));
         }
-
-        // since this is not a calculation we do not need to have a method in calculations that prints all
-
-        //  String projectSchedule = projectSunShine.getProjectSchedule();
-        //  System.out.println(projectSchedule);
 
     }
 

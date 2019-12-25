@@ -124,8 +124,9 @@ public class Calculations {
             double estimated = workpackages[week].getEstimatedHours() + workpackages[week + 1].getEstimatedHours();
             double worked = workpackages[week].getWorkedHours() + workpackages[week + 1].getWorkedHours();
             int workers = workpackages[week].getId().length + workpackages[week + 1].getId().length;
+            int timeSpent = workpackages[week].getWeek().length;
             double salary = members[1].getCostPerHour();
-            EV = (estimated / worked) * workers * salary;
+            EV = (estimated / worked) * workers * salary * timeSpent;
         } else {
             System.out.println("The week you entered is invalid ");
         }
@@ -133,10 +134,14 @@ public class Calculations {
     }
 
     public static String ActivitySchedule (Workpackage[] workpackages, int weeks) {
-
+        int weekName = 0;
 	    String activityName = workpackages[weeks].getName();
-	    int weekName = workpackages[weeks].getWeek();
-        System.out.printf("%s %20s %4s %10d %4s", "|" , activityName, "|" , weekName, "|");
+	    for(int i = 0; i<workpackages[weeks].getWeek().length; i++) {
+            weekName = (workpackages[weeks].getWeekValue(i));
+        }
+        //System.out.printf("%20s " , activityName );
+
+        System.out.printf("%20s %10d " , activityName , weekName);
         String result = "";
         return result;
     }

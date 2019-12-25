@@ -85,54 +85,54 @@
       "id": [1,2],
       "estimatedHours": 5,
       "workedHours":2,
-      "week": 1
+      "week": [1]
     },
     {
       "name": "Testing",
       "id": [1,2],
       "estimatedHours": 15,
       "workedHours":2,
-      "week": 1
+      "week": [1]
     },
     {
       "name": "Planning",
       "id": [1,2],
       "estimatedHours": 30,
       "workedHours":2,
-      "week": 1
+      "week": [1]
     }, {
       "name": "Input handling",
       "id": [1,2],
       "estimatedHours": 50,
       "workedHours":2,
-      "week": 1
+      "week": [1]
     },
     {
       "name": "Input handling",
       "id": [1,2],
       "estimatedHours": 70,
       "workedHours":2,
-      "week": 1
+      "week": [1]
     },
     {
       "name": "Input handling",
       "id": [1,2],
       "estimatedHours": 100,
       "workedHours":2,
-      "week": 1
+      "week": [1]
     },
     {
       "name": "Input handling",
       "id": [1,2],
       "estimatedHours": 120,
       "workedHours":2,
-      "week": 1
+      "week": [1]
     }, {
       "name": "Input handling",
       "id": [1,2],
       "estimatedHours": 150,
       "workedHours":2,
-      "week": 1
+      "week": [1]
     }
   ]
 }
