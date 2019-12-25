@@ -13,22 +13,22 @@ public class Main {
     Scanner scanner = new Scanner((System.in));
     Project projectSunShine = convertJsonToObject("src\\JsonFiles\\ProjectSunShine.json", Project.class);
 
-    private final int EARNED_VALUE = 1;
-    private final int SCHEDULE_VARIANCE = 2;
-    private final int COST_VARIANCE = 3;
-    private final int RISK_MATRIX = 4;
-    private final int PROJECT_SCHEDULE = 5;
-    private final int TIME_OF_MEMBERS = 6;
-    private final int MEMBER_PARTICIPATION = 7;
-    private final int QUIT = 8;
+    private final String EARNED_VALUE = "1";
+    private final String SCHEDULE_VARIANCE = "2";
+    private final String COST_VARIANCE = "3";
+    private final String RISK_MATRIX = "4";
+    private final String PROJECT_SCHEDULE = "5";
+    private final String TIME_OF_MEMBERS = "6";
+    private final String MEMBER_PARTICIPATION = "7";
+    private final String QUIT = "8";
 
 
     public void run() {
-        int userInputMenu;
+        String userInputMenu;
         try {
             do {
                 printMenu();
-                userInputMenu = readInputInt("Enter option: ");
+                userInputMenu = readInputString("Enter option: ");
 
                 switch (userInputMenu) {
                     case EARNED_VALUE:
