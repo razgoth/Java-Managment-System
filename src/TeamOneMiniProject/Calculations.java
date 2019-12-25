@@ -136,7 +136,7 @@ public class Calculations {
 
 	    String activityName = workpackages[weeks].getName();
 	    int weekName = workpackages[weeks].getWeek();
-        System.out.printf("%s %20s %4s %10d %4s", "|" , activityName, "|" , weekName, "|");
+        System.out.printf("%20s  %10d ",activityName, weekName);
         String result = "";
         return result;
     }
