@@ -1,4 +1,4 @@
-package TeamOneMiniProject.Main;
+package Main;
 
 import TeamOneMiniProject.Member;
 import TeamOneMiniProject.Project;
