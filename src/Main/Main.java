@@ -71,7 +71,7 @@ public class Main {
 
             } while (userInputMenu != QUIT);
         } catch (Exception e) {
-            System.out.println("Did you think you can break the code?");
+            System.out.println("Please enter a valid number option");
 
         }
 
