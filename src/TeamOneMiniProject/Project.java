@@ -1,4 +1,5 @@
 package TeamOneMiniProject;
+
 import java.util.HashMap;
 
 public class Project {
@@ -8,8 +9,8 @@ public class Project {
     private int startWeek;
     private int endWeek;
     private Member[] members;
-    private Risk [] risks;
-    private Workpackage [] workPackages;
+    private Risk[] risks;
+    private Workpackage[] workPackages;
 
     public Project(String projectName, int startWeek, int endWeek, Member[] members, Risk[] risks, Workpackage[] workPackages) {
         this.projectName = projectName;
@@ -19,7 +20,11 @@ public class Project {
         this.risks = risks;
         this.workPackages = workPackages;
     }
-public Project (){};
+
+    public Project() {
+    }
+
+    ;
 
     public String getProjectName() {
         return projectName;
@@ -46,14 +51,14 @@ public Project (){};
     }
 
 
-    public double getEarnedValue(int weeks){
+    public double getEarnedValue(int weeks) {
 
         double EV = Calculations.EV(members, workPackages, weeks);
         return EV;
 
     }
 
-    public double getScheduleVariance(int weeks){
+    public double getScheduleVariance(int weeks) {
 
 
         double SV = Calculations.SV(members, workPackages, weeks);
@@ -61,13 +66,13 @@ public Project (){};
 
     }
 
-    public double getCostVariance(int weeks){
-      double CV = Calculations.CV(getMembers(), getWorkPackages(), weeks);
+    public double getCostVariance(int weeks) {
+        double CV = Calculations.CV(getMembers(), getWorkPackages(), weeks);
         return CV;
 
     }
 
-    public HashMap<String, Double> getRiskMatrix(){
+    public HashMap<String, Double> getRiskMatrix() {
         Risk[] risks = getRisks();
 
         HashMap<String, Double> riskMatrix = Calculations.riskMatrix(risks);
@@ -75,12 +80,13 @@ public Project (){};
 
     }
 
-   public String getProjectSchedule() {
+    public String getProjectSchedule() {
 
         String projectSchedule = Calculations.projectSunshine(startWeek, endWeek, projectName);
         return projectSchedule;
 
     }
+
     // new method
     public String getActivitySchedule(int weeks) {
 
@@ -90,28 +96,28 @@ public Project (){};
 
     }
 
-   public HashMap<String, Double> getTimeOfMembers(){
+    public HashMap<String, Double> getTimeOfMembers() {
 
         HashMap<String, Double> timeOfMembers = Calculations.getHoursOnProject(members);
         return timeOfMembers;
     }
 
-    public  Member getTimeByMember(String id){
+    public Member getTimeByMember(String id) {
 
-        Member timeByMember= Calculations.retrieveMember(members, id);
+        Member timeByMember = Calculations.retrieveMember(members, id);
         return timeByMember;
     }
 
-   public  String getMemberParticipation(String id){
+    public String getMemberParticipation(String id) {
 
         String memberParticipation = Calculations.printPackagesWorked(workPackages, members, id);
         return memberParticipation;
     }
 
-    public HashMap<String, String> getMemberId(){
+    public HashMap<String, String> getMemberId() {
 
         HashMap<String, String> memberId = new HashMap<String, String>();
-        for(int i = 0; i < members.length; i++){
+        for (int i = 0; i < members.length; i++) {
             memberId.put(members[i].getFullName(), members[i].getId());
 
         }
