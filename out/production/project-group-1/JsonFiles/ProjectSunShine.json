@@ -92,7 +92,7 @@
       "id": [1,2],
       "estimatedHours": 15,
       "workedHours":2,
-      "week": [1]
+      "week": [1,2,3]
     },
     {
       "name": "Planning",

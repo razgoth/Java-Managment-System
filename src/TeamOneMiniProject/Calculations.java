@@ -135,7 +135,6 @@ public class Calculations {
 
     public static String ActivitySchedule (Workpackage[] workpackages, int weeks) {
         int weekName = 0;
-        boolean again = true;
 
         String activityName = workpackages[weeks].getName();
         System.out.printf("%20s ", activityName);
@@ -147,7 +146,6 @@ public class Calculations {
                 System.out.printf(" %15d ", weekName);
 
             } else {
-                    again = false;
                     System.out.printf(" %15d ", weekName);
                 }
             }
