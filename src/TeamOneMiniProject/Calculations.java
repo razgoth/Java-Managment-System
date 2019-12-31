@@ -192,10 +192,4 @@ public class Calculations {
         return SV;
     }
 
-    public static String projectSunshine(int startWeek, int endWeek, String name) {
-
-	    String output = "Start week: "+startWeek+"EndWeek: "+endWeek+"Name: "+name;
-
-        return output;
-    }
 }
