@@ -11,8 +11,7 @@ import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
 
 public class Main {
     Scanner scanner = new Scanner((System.in));
-    //"/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/ProjectSunShine.json"
-    Project projectSunShine = convertJsonToObject("/C:/Users/freja/mini-project/project-group-1/src/JsonFiles/ProjectSunShine.json", Project.class);
+    Project projectSunShine = convertJsonToObject("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/ProjectSunShine.json", Project.class);
 
     private final String EARNED_VALUE = "1";
     private final String SCHEDULE_VARIANCE = "2";
