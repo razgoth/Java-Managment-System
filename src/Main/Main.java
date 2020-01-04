@@ -11,7 +11,8 @@ import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
 
 public class Main {
     Scanner scanner = new Scanner((System.in));
-    Project projectSunShine = convertJsonToObject("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/ProjectSunShine.json", Project.class);
+    //"/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/ProjectSunShine.json"
+    Project projectSunShine = convertJsonToObject("/C:/Users/freja/mini-project/project-group-1/src/JsonFiles/ProjectSunShine.json", Project.class);
 
     private final String EARNED_VALUE = "1";
     private final String SCHEDULE_VARIANCE = "2";
@@ -177,11 +178,12 @@ public class Main {
         if (foundMember != null) {
             HashMap<String, Double> work = foundMember.getWork();
             System.out.println(foundMember.getFullName() + "'s worked hours:");
+            System.out.printf("\n%s %s %2s %s %s %n\n", "|", "Week", "|", "Hours", "|");
             for (Map.Entry<String, Double> week : work.entrySet()) {
-                System.out.println(week.getKey() + ": " + week.getValue());
+                System.out.println("  "+week.getKey() + ":  " + week.getValue());
                 totHours += week.getValue();
             }
-            System.out.println("Total hours worked: " + totHours);
+            System.out.println("\nTotal hours worked: " + totHours);
         } else {
             System.out.println("A member with input ID was not found");
         }
@@ -237,9 +239,10 @@ public class Main {
     }
 
     private void printMemberSubMenu2() {
+    	System.out.printf("\n%s %s %s %2s %4s %n\n", "|", "ID", "|", "Name", "|");
         HashMap<String, String> memberId = projectSunShine.getMemberId();
         for (String key : memberId.keySet()) {
-            System.out.println(key + " : " + memberId.get(key));
+            System.out.println(" "+ memberId.get(key) + " : " + key);
         }
     }
 

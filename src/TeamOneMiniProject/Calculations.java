@@ -36,7 +36,7 @@ public class Calculations {
 			// Iterates Id-array within workpackage-array
 			for(int j = 0; j < workpackages[i].getId().length; j++) {
 				if(workpackages[i].getIdValue(j).equals(id)) {
-					wp += workpackages[i].getName() + "\n";
+					wp += "* "+workpackages[i].getName() + "\n";
 				}
 			}
 		}
