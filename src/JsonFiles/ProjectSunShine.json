@@ -60,23 +60,47 @@
   ],
   "risks": [
     {
-      "description": "RISK 01",
-      "impact": 1,
-      "probability": 2
-    },
-    {
-      "description": "RISK 02",
+      "description": "Dividing the work",
       "impact": 3,
-      "probability": 4
-    },{
-      "description": "RISK 03",
-      "impact": 5,
-      "probability": 6
+      "probability": 0.3
     },
     {
-      "description": "RISK 04",
-      "impact": 6,
-      "probability": 8
+      "description": "Group/Pair Programming",
+      "impact": 2,
+      "probability": 0.3
+    },{
+      "description": "JSON File Handling",
+      "impact": 5,
+      "probability": 0.1
+    },
+    {
+      "description": "GITLAB",
+      "impact": 3,
+      "probability": 0.1
+    },
+    {
+      "description": "Conflicts within the Team",
+      "impact": 2,
+      "probability": 0.5
+    },
+    {
+      "description": "Estimation and Scheduling",
+      "impact": 4,
+      "probability": 0.3
+    },{
+      "description": "Team Member Turnover",
+      "impact": 5,
+      "probability": 0.7
+    },
+    {
+      "description": "Budget Risk",
+      "impact": 4,
+      "probability": 0.3
+    },
+    {
+      "description": "Design and requirement ",
+      "impact": 4,
+      "probability": 0.3
     }
   ],
   "workPackages": [
