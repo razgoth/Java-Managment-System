@@ -125,14 +125,14 @@ public class Main {
     private void printScheduleVariance() {
         for (int i = 2; i < projectSunShine.getWorkPackages().length; i += 2) {
             double scheduleVariance = projectSunShine.getScheduleVariance(i);
-            System.out.println("Schedule variance in the end of week " + (i) + " : " + scheduleVariance);
+            System.out.println("Schedule Variance for week " + (i-1) + " and week " + i + "  : " + scheduleVariance);
         }
     }
 
     private void printCostVariance() {
         for (int i = 2; i < projectSunShine.getWorkPackages().length; i += 2) {
             double costVariance = projectSunShine.getCostVariance(i);
-            System.out.println("Cost variance in the end of week " + (i) + " : " + costVariance);
+            System.out.println("Cost Variance for week " + (i-1) + " and week " + i + "  : " + costVariance);
         }
 
     }

@@ -80,13 +80,6 @@ public class Project {
 
     }
 
-    public String getProjectSchedule() {
-
-        String projectSchedule = Calculations.projectSunshine(startWeek, endWeek, projectName);
-        return projectSchedule;
-
-    }
-
     // new method
     public String getActivitySchedule(int weeks) {
 
