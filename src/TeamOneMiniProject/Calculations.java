@@ -137,8 +137,9 @@ public class Calculations {
 
             for(int i = 0; i<members.length ; i++) {
                 salary = members[i].getCostPerHour();
+                EV = (estimated / worked) * workers * salary * timeSpent;
             }
-            EV = (estimated / worked) * workers * salary * timeSpent;
+
         } else {
             System.out.println("The week you entered is invalid ");
         }
