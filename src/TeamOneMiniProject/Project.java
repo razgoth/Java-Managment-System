@@ -80,13 +80,6 @@ public class Project {
 
     }
 
-    public String getProjectSchedule() {
-
-        String projectSchedule = Calculations.projectSunshine(startWeek, endWeek, projectName);
-        return projectSchedule;
-
-    }
-
     // new method
     public String getActivitySchedule(int weeks) {
 
@@ -98,8 +91,13 @@ public class Project {
 
     public HashMap<String, Double> getTimeOfMembers() {
 
-        HashMap<String, Double> timeOfMembers = Calculations.getHoursOnProject(members);
+        HashMap<String, Double> timeOfMembers = Calculations.getHoursPerMember(members);
         return timeOfMembers;
+    }
+
+    public Double getTotalHours(){
+        Double totalHours = Calculations.getTotalHoursOnProject(members);
+        return totalHours;
     }
 
     public Member getTimeByMember(String id) {

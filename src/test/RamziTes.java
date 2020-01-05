@@ -14,7 +14,7 @@ public class RamziTes {
             double estimated = workpackages[week].getEstimatedHours() + workpackages[week + 1].getEstimatedHours();
             double worked = workpackages[week].getWorkedHours() + workpackages[week + 1].getWorkedHours();
             int workers = workpackages[week].getId().length + workpackages[week + 1].getId().length;
-            int salary = members[1].getCostPerHour();
+            double salary = members[1].getCostPerHour();
             EV = (estimated / worked) * workers * salary;
         } else {
             System.out.println("The week you entered is invalid ");

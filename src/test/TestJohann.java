@@ -23,7 +23,7 @@ public class TestJohann {
 
 
         System.out.println();
-        System.out.println("Total: " + Calculations.getHoursOnProject(members));
+       // System.out.println("Total: " + Calculations.getHoursOnProject(members));
 
     }
 

@@ -36,7 +36,7 @@ public class Calculations {
 			// Iterates Id-array within workpackage-array
 			for(int j = 0; j < workpackages[i].getId().length; j++) {
 				if(workpackages[i].getIdValue(j).equals(id)) {
-					wp += workpackages[i].getName() + "\n";
+					wp += "* "+workpackages[i].getName() + "\n";
 				}
 			}
 		}
@@ -93,19 +93,26 @@ public class Calculations {
 	}
 
 
-    public static HashMap<String, Double> getHoursOnProject (Member[] members){
-        double  sum = 0.0;
+    public static HashMap<String, Double> getHoursPerMember (Member[] members){
+
         HashMap<String, Double> hoursPerMember = new HashMap<>();
         for (int i = 0; i < members.length; i++){
             String name = members[i].getFullName();
             Double hours = members[i].getHoursWorked();
-            sum += hours;
             hoursPerMember.put(name, hours);
         }
-
-        hoursPerMember.put("Total", sum);
         return hoursPerMember;
     }
+    public static Double getTotalHoursOnProject (Member[] members){
+        double  sum = 0.0;
+        for (int i = 0; i < members.length; i++){
+            Double hours = members[i].getHoursWorked();
+            sum += hours;
+
+        }
+        return sum;
+    }
+
 
 
     // this method gets an array of risk and return a HashMap of Description and risk
@@ -119,13 +126,18 @@ public class Calculations {
     // this is ramzi method for EV
     public static double EV(Member[] members, Workpackage[] workpackages, int weeks) {
         double EV = 0;
+        double salary = 0.0;
         int week = weeks - 1;
         if (weeks > 0 && weeks < workpackages.length && weeks%2 !=0) {
             double estimated = workpackages[week].getEstimatedHours() + workpackages[week + 1].getEstimatedHours();
             double worked = workpackages[week].getWorkedHours() + workpackages[week + 1].getWorkedHours();
             int workers = workpackages[week].getId().length + workpackages[week + 1].getId().length;
             int timeSpent = workpackages[week].getWeek().length;
-            double salary = members[1].getCostPerHour();
+
+
+            for(int i = 0; i<members.length ; i++) {
+                 salary = members[i].getCostPerHour();
+            }
             EV = (estimated / worked) * workers * salary * timeSpent;
         } else {
             System.out.println("The week you entered is invalid ");
@@ -183,10 +195,4 @@ public class Calculations {
         return SV;
     }
 
-    public static String projectSunshine(int startWeek, int endWeek, String name) {
-
-	    String output = "Start week: "+startWeek+"EndWeek: "+endWeek+"Name: "+name;
-
-        return output;
-    }
 }
