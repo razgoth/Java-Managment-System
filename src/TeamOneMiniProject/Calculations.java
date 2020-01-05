@@ -136,7 +136,7 @@ public class Calculations {
 
 
             for(int i = 0; i<members.length ; i++) {
-                 salary = members[i].getCostPerHour();
+                salary = members[i].getCostPerHour();
             }
             EV = (estimated / worked) * workers * salary * timeSpent;
         } else {
