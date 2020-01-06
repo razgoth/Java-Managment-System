@@ -131,13 +131,13 @@ public class Calculations {
         int i = 0;
         if (weeks > 0 && weeks < workpackages.length && weeks%2 !=0) {
             double estimated = workpackages[week].getEstimatedHours() + workpackages[week + 1].getEstimatedHours();
-            double worked = workpackages[week].getWorkedHours() + workpackages[week + 1].getWorkedHours();
-            int workers = workpackages[week].getId().length + workpackages[week + 1].getId().length;
-            int timeSpent = workpackages[week].getWeek().length;
+            double ActualHours = workpackages[week].getWorkedHours() + workpackages[week + 1].getWorkedHours();
+            int NumberOfWorkers = workpackages[week].getId().length + workpackages[week + 1].getId().length;
+            int numberOfWeeks = workpackages[week].getWeek().length;
             salary = members[i].getCostPerHour();
 
 
-            EV = worked * workers * salary * timeSpent;
+            EV = ActualHours * NumberOfWorkers * salary * numberOfWeeks;
 
 
         } else {
