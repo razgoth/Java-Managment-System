@@ -12,6 +12,9 @@ public class Project {
     private Risk[] risks;
     private Workpackage[] workPackages;
 
+    public Project() {
+    }
+
     public Project(String projectName, int startWeek, int endWeek, Member[] members, Risk[] risks, Workpackage[] workPackages) {
         this.projectName = projectName;
         this.startWeek = startWeek;
@@ -19,9 +22,6 @@ public class Project {
         this.members = members;
         this.risks = risks;
         this.workPackages = workPackages;
-    }
-
-    public Project() {
     }
 
 
@@ -49,66 +49,40 @@ public class Project {
         return workPackages;
     }
 
-
     public double getEarnedValue(int weeks) {
-
-        double EV = Calculations.EV(members, workPackages, weeks);
-        return EV;
-
+        return Calculations.EV(members, workPackages, weeks);
     }
 
     public double getScheduleVariance(int weeks) {
-
-
-        double SV = Calculations.SV(members, workPackages, weeks);
-        return SV;
-
+        return Calculations.SV(members, workPackages, weeks);
     }
 
     public double getCostVariance(int weeks) {
-        double CV = Calculations.CV(getMembers(), getWorkPackages(), weeks);
-        return CV;
-
+        return Calculations.CV(getMembers(), getWorkPackages(), weeks);
     }
 
     public HashMap<String, Double> getRiskMatrix() {
-        Risk[] risks = getRisks();
-
-        HashMap<String, Double> riskMatrix = Calculations.riskMatrix(risks);
-        return riskMatrix;
-
+        return Calculations.riskMatrix(risks);
     }
 
-    // new method
     public String getActivitySchedule(int weeks) {
-
-
-        String activitySchedule = Calculations.ActivitySchedule(workPackages, weeks);
-        return activitySchedule;
-
+        return Calculations.ActivitySchedule(workPackages, weeks);
     }
 
     public HashMap<String, Double> getTimeOfMembers() {
-
-        HashMap<String, Double> timeOfMembers = Calculations.getHoursPerMember(members);
-        return timeOfMembers;
+        return Calculations.getHoursPerMember(members);
     }
 
-    public Double getTotalHours(){
-        Double totalHours = Calculations.getTotalHoursOnProject(members);
-        return totalHours;
+    public Double getTotalHours() {
+        return Calculations.getTotalHoursOnProject(members);
     }
 
     public Member getTimeByMember(String id) {
-
-        Member timeByMember = Calculations.retrieveMember(members, id);
-        return timeByMember;
+        return Calculations.retrieveMember(members, id);
     }
 
     public String getMemberParticipation(String id) {
-
-        String memberParticipation = Calculations.printPackagesWorked(workPackages, members, id);
-        return memberParticipation;
+        return Calculations.printPackagesWorked(workPackages, members, id);
     }
 
     public HashMap<String, String> getMemberId() {
@@ -116,10 +90,8 @@ public class Project {
         HashMap<String, String> memberId = new HashMap<String, String>();
         for (int i = 0; i < members.length; i++) {
             memberId.put(members[i].getFullName(), members[i].getId());
-
         }
         return memberId;
-
     }
 }
 

@@ -60,7 +60,7 @@ public class Main {
                         break;
 
                     case QUIT:
-                        System.out.println("Thank you for using the project. Hopefully Project Sunshine was successful!");
+                        System.out.println("Thank you for using the Project SunShine!");
                         return;
 
                     default:
@@ -69,10 +69,9 @@ public class Main {
                 }
 
 
-            } while (userInputMenu != QUIT);
+            } while (!userInputMenu.equalsIgnoreCase(QUIT));
         } catch (Exception e) {
-            System.out.println("Please enter a valid number option");
-
+            System.out.println("Something went wrong");
         }
 
     }
@@ -100,41 +99,28 @@ public class Main {
 
     }
 
-    private int readInputInt(String userMessage) {
-        int userInput;
-
-        System.out.println(userMessage);
-        userInput = scanner.nextInt();
-        scanner.nextLine();
-        return userInput;
-
-    }
 
     private void printEarnedValue() {
         System.out.println("Earned Value\n");
 
         for (int i = 1; i < projectSunShine.getWorkPackages().length; i += 2) {
             double earnedValue = projectSunShine.getEarnedValue(i);
-
             System.out.println("Earned Value for week " + i + " and week " + (i + 1) + "  : " + earnedValue);
-
         }
-
     }
 
     private void printScheduleVariance() {
         for (int i = 2; i < projectSunShine.getWorkPackages().length; i += 2) {
             double scheduleVariance = projectSunShine.getScheduleVariance(i);
-            System.out.println("Schedule Variance for week " + (i-1) + " and week " + i + "  : " + scheduleVariance);
+            System.out.println("Schedule Variance for week " + (i - 1) + " and week " + i + "  : " + scheduleVariance);
         }
     }
 
     private void printCostVariance() {
         for (int i = 2; i < projectSunShine.getWorkPackages().length; i += 2) {
             double costVariance = projectSunShine.getCostVariance(i);
-            System.out.println("Cost Variance for week " + (i-1) + " and week " + i + "  : " + costVariance);
+            System.out.println("Cost Variance for week " + (i - 1) + " and week " + i + "  : " + costVariance);
         }
-
     }
 
     private void printRiskMatrix() {
@@ -142,64 +128,59 @@ public class Main {
         for (String key : riskMatrix.keySet()) {
             System.out.println(key + ": " + riskMatrix.get(key));
         }
-
     }
 
     private void printProjectSchedule() {
-
         System.out.println("Project Schedule\n");
         System.out.println("Project Name: " + projectSunShine.getProjectName());
-
         System.out.println("Start Week: " + projectSunShine.getStartWeek());
         System.out.println("End Week: " + projectSunShine.getEndWeek());
-
         System.out.printf("\n%s %17s %4s %12s %4s %n\n", "|", "Work Package", "|", "Week", "|");
         for (int i = 0; i < projectSunShine.getWorkPackages().length; i++) {
             System.out.println(projectSunShine.getActivitySchedule(i));
         }
-
     }
 
     private void printTimeOfMembers() {
         HashMap<String, Double> timeOfMembers = projectSunShine.getTimeOfMembers();
         Double totalHours = projectSunShine.getTotalHours();
-
         for (String key : timeOfMembers.keySet()) {
             System.out.println(key + ": " + timeOfMembers.get(key));
         }
-
         System.out.println("\nTotal: " + totalHours);
     }
 
 
     public static void printHoursHash(Member foundMember) {
-        double totHours = 0;
+        double totalHours = 0;
         if (foundMember != null) {
             HashMap<String, Double> work = foundMember.getWork();
+
             System.out.println(foundMember.getFullName() + "'s worked hours:");
             System.out.printf("\n%s %s %2s %s %s %n\n", "|", "Week", "|", "Hours", "|");
+
             for (Map.Entry<String, Double> week : work.entrySet()) {
-                System.out.println("  "+week.getKey() + ":  " + week.getValue());
-                totHours += week.getValue();
+                System.out.println("  " + week.getKey() + ":  " + week.getValue());
+                totalHours += week.getValue();
             }
-            System.out.println("\nTotal hours worked: " + totHours);
+            System.out.println("\nTotal hours worked: " + totalHours);
         } else {
             System.out.println("A member with input ID was not found");
         }
     }
 
-    private final int TIME_BY_MEMBER = 1;
-    private final int WORKPACKAGES_BY_MEMBER = 2;
-    private final int GO_BACK = 3;
+    private final String TIME_BY_MEMBER = "1";
+    private final String WORKPACKAGES_BY_MEMBER = "2";
+    private final String GO_BACK = "3";
 
     private void printMemberParticipation() {
 
         String id;
-        int userInputMemberParticipation;
+        String userInputMemberParticipation;
 
         do {
             printMemberSubMenu1();
-            userInputMemberParticipation = readInputInt("Enter option: \n");
+            userInputMemberParticipation = readInputString("Enter option: \n");
 
             switch (userInputMemberParticipation) {
                 case TIME_BY_MEMBER:
@@ -217,7 +198,7 @@ public class Main {
                     break;
 
                 case GO_BACK:
-                    System.out.println("You are going home, sailor!");
+                    System.out.println("Back to the main menu");
                     break;
 
                 default:
@@ -225,7 +206,7 @@ public class Main {
 
             }
 
-        } while (userInputMemberParticipation != 3);
+        } while (!userInputMemberParticipation.equalsIgnoreCase("3"));
 
     }
 
@@ -238,10 +219,10 @@ public class Main {
     }
 
     private void printMemberSubMenu2() {
-    	System.out.printf("\n%s %s %s %2s %4s %n\n", "|", "ID", "|", "Name", "|");
+        System.out.printf("\n%s %s %s %2s %4s %n\n", "|", "ID", "|", "Name", "|");
         HashMap<String, String> memberId = projectSunShine.getMemberId();
         for (String key : memberId.keySet()) {
-            System.out.println(" "+ memberId.get(key) + " : " + key);
+            System.out.println(" " + memberId.get(key) + " : " + key);
         }
     }
 

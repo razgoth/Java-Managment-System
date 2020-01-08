@@ -12,6 +12,13 @@ public class Member {
         work = new HashMap<String, Double>();
     }
 
+    public Member(String id, String fullName, double costPerHour, HashMap<String, Double> work) {
+        this.id = id;
+        this.fullName = fullName;
+        this.costPerHour = costPerHour;
+        this.work = work;
+    }
+
     //getters
     public String getId() {
         return id;
@@ -29,9 +36,7 @@ public class Member {
         return work;
     }
 
-    public Double getWorkValue(String key){
-        return work.get(key);
-    }
+
 
     public Double getHoursWorked() {
         Double hoursWorked = 0.0;
@@ -41,13 +46,5 @@ public class Member {
         return hoursWorked;
     }
 
-    @Override
-    public String toString() {
-        return "Member{" +
-                "id='" + id + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", costPerHour=" + costPerHour +
-                ", work=" + work +
-                '}';
-    }
+
 }

@@ -1,118 +1,81 @@
 package TeamOneMiniProject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 
 public class Calculations {
 
 
-	public static Member retrieveMember(Member[] members, String id) {
-		for(int i = 0; i < members.length; i++) {
-			if(members[i].getId().equals(id)) {
-				return members[i];
-			}
-		}
-		return null;
-	}
+    public static Member retrieveMember(Member[] members, String id) {
+        for (int i = 0; i < members.length; i++) {
+            if (members[i].getId().equals(id)) {
+                return members[i];
+            }
+        }
+        return null;
+    }
 
-	public static String printPackagesWorked(Workpackage[] workpackages,  Member[] members, String id) {
+    public static String printPackagesWorked(Workpackage[] workpackages, Member[] members, String id) {
 
-		String output = "";
-		String wp = "";
-		String name = "";
+        String output = "";
+        String wp = "";
+        String name = "";
 
         Member foundMember3 = retrieveMember(members, id);
 
-		// Checks if id exists in members and catches name.
-		if (foundMember3 != null) {
-			name = foundMember3.getFullName();
-		}
+        // Checks if id exists in members and catches name.
+        if (foundMember3 != null) {
+            name = foundMember3.getFullName();
+        }
 
 
-		//Checks if id exists in workpackages and catches workpackages participated in
-		for(int i = 0; i < workpackages.length; i++) {
+        //Checks if id exists in workpackages and catches workpackages participated in
+        for (int i = 0; i < workpackages.length; i++) {
 
-			// Iterates Id-array within workpackage-array
-			for(int j = 0; j < workpackages[i].getId().length; j++) {
-				if(workpackages[i].getIdValue(j).equals(id)) {
-					wp += "* "+workpackages[i].getName() + "\n";
-				}
-			}
-		}
+            // Iterates Id-array within workpackage-array
+            for (int j = 0; j < workpackages[i].getId().length; j++) {
+                if (workpackages[i].getIdValue(j).equals(id)) {
+                    wp += "* " + workpackages[i].getName() + "\n";
+                }
+            }
+        }
 
-		// Checks if data was found and output found data.
-		if(name.equals("") && wp.isEmpty()) {
-			output = "ID "+id+" does not exist in the system.\n";
-		} else if(!(name.equals("")) && wp.isEmpty()){
-			output = name+" has not participated in any workpackages\n";
-		} else if(!(wp.isEmpty()) && name.equals("")){
-			output = "No member with ID "+id+" could be found. ID was found in workpackages: \n";
-			output += wp;
-		} else {
-			output = "Workpackages "+name+" participated in: \n";
-			output += wp;
-		}
-
-
-		return output;
-	}
-
-	public static ArrayList<String> packagesWorkedGold(Workpackage[] workpackages, Member foundMember3, String id) {
-		ArrayList<String> wp = new ArrayList<String>();
-		String name = "";
-
-		// Checks if id exists in members and catches name.
-		if (foundMember3 != null) {
-			name = foundMember3.getFullName();
-		}
+        // Checks if data was found and output found data.
+        if (name.equals("") && wp.isEmpty()) {
+            output = "ID " + id + " does not exist in the system.\n";
+        } else if (!(name.equals("")) && wp.isEmpty()) {
+            output = name + " has not participated in any workpackages\n";
+        } else if (!(wp.isEmpty()) && name.equals("")) {
+            output = "No member with ID " + id + " could be found. ID was found in workpackages: \n";
+            output += wp;
+        } else {
+            output = "Workpackages " + name + " participated in: \n";
+            output += wp;
+        }
+        return output;
+    }
 
 
-		//Checks if id exists in workpackages and catches workpackages participated in
-		for(int i = 0; i < workpackages.length; i++) {
-
-			// Iterates Id-array within workpackage-array
-			for(int j = 0; j < workpackages[i].getId().length; j++) {
-				if(workpackages[i].getIdValue(j).equals(id)) {
-					wp.add(workpackages[i].getName());
-				}
-			}
-		}
-
-
-		// Checks if data was found and output found data.
-		if(name.equals("") && wp.isEmpty()) {
-			System.out.println("ID "+id+" does not exist in the system");
-		} else if(!(name.equals("")) && wp.isEmpty()){
-			System.out.println(name+" has not participated in any workpackages");
-		} else if(!(wp.isEmpty()) && name.equals("")){
-			System.out.println("No member with ID "+id+" could be found.The ID was found in workpackages:");
-		}
-
-		return wp;
-	}
-
-
-    public static HashMap<String, Double> getHoursPerMember (Member[] members){
+    public static HashMap<String, Double> getHoursPerMember(Member[] members) {
 
         HashMap<String, Double> hoursPerMember = new HashMap<>();
-        for (int i = 0; i < members.length; i++){
+        for (int i = 0; i < members.length; i++) {
             String name = members[i].getFullName();
             Double hours = members[i].getHoursWorked();
             hoursPerMember.put(name, hours);
         }
         return hoursPerMember;
     }
-    public static Double getTotalHoursOnProject (Member[] members){
-        double  sum = 0.0;
-        for (int i = 0; i < members.length; i++){
+
+    public static Double getTotalHoursOnProject(Member[] members) {
+        double sum = 0.0;
+        for (int i = 0; i < members.length; i++) {
             Double hours = members[i].getHoursWorked();
             sum += hours;
 
         }
         return sum;
     }
-
 
 
     // this method gets an array of risk and return a HashMap of Description and risk
@@ -123,29 +86,34 @@ public class Calculations {
         }
         return riskMatrices;
     }
-    //  calculate 1EV
+
+    //  calculate EV
     public static double EV(Member[] members, Workpackage[] workpackages, int weeks) {
-        double EV = 0;
+        double EV1 = 0;
+        double EV2= 0;
         double salary = 0.0;
         int week = weeks - 1;
         int i = 0;
-        if (weeks > 0 && weeks < workpackages.length && weeks%2 !=0) {
-            double actualHours = workpackages[week].getWorkedHours() + workpackages[week + 1].getWorkedHours();
-            int numberOfWorkers = workpackages[week].getId().length + workpackages[week + 1].getId().length;
+        if (weeks > 0 && weeks < workpackages.length && weeks % 2 != 0) {
+            double actualHoursWeek1 = workpackages[week].getWorkedHours();
+            double actualHoursWeek2 = workpackages[week + 1].getWorkedHours();
+            int numberOfWorkers1 = workpackages[week].getId().length;
+            int numberOfWorkers2 = workpackages[week + 1].getId().length;
             int numberOfWeeks = workpackages[week].getWeek().length;
             salary = members[i].getCostPerHour();
 
 
-            EV = actualHours * numberOfWorkers * salary * numberOfWeeks;
+            EV1 = (actualHoursWeek1/numberOfWorkers1) * numberOfWorkers1 * salary * numberOfWeeks;
+            EV2 = (actualHoursWeek2/numberOfWorkers2) * numberOfWorkers2 * salary * numberOfWeeks;
 
 
         } else {
             System.out.println("The week you entered is invalid ");
         }
-        return EV;
+        return EV1 + EV2;
     }
 
-    public static String ActivitySchedule (Workpackage[] workpackages, int weeks) {
+    public static String ActivitySchedule(Workpackage[] workpackages, int weeks) {
         int weekName = 0;
 
         String activityName = workpackages[weeks].getName();
@@ -154,13 +122,13 @@ public class Calculations {
         for (int i = 0; i < workpackages[weeks].getWeek().length; i++) {
             weekName = (workpackages[weeks].getWeekValue(i));
 
-            if (workpackages[weeks].getWeek().length == 1 ) {
+            if (workpackages[weeks].getWeek().length == 1) {
                 System.out.printf(" %15d ", weekName);
 
             } else {
-                    System.out.printf(" %15d ", weekName);
-                }
+                System.out.printf(" %15d ", weekName);
             }
+        }
         String result = "";
         return result;
     }
@@ -170,27 +138,26 @@ public class Calculations {
         double cv = 0;
         if (weekIndex >= workPackages.length || weekIndex == 0) {
             System.out.println("You have entered invalid week number. Please enter a valid week number");
-        }else if (weekIndex % 2 == 0){
+        } else if (weekIndex % 2 == 0) {
             System.out.println("You have entered invalid week number. The Cost variance can only be calculated in the end of each sprint i.e: week 2, 4, 6, ect.");
-        }
-        else {
-            double AC = (workPackages[weekIndex].getWorkedHours()+ workPackages[weekIndex - 1].getWorkedHours())* members[0].getCostPerHour();
+        } else {
+            double AC = (workPackages[weekIndex].getWorkedHours() + workPackages[weekIndex - 1].getWorkedHours()) * members[0].getCostPerHour();
             cv = (EV(members, workPackages, weekIndex) - AC);
         }
         return cv;
     }
 
-    public static double SV(Member[] members,Workpackage[] workPackages, int week) {
+    public static double SV(Member[] members, Workpackage[] workPackages, int week) {
 
         int weekIndex = week - 1;
         double SV = 0;
         if (weekIndex >= workPackages.length || weekIndex == 0) {
             System.out.println("You have entered invalid week number. Please enter a valid week number");
-        }else if (weekIndex % 2 == 0) {
+        } else if (weekIndex % 2 == 0) {
             System.out.println("You have entered invalid week number. The Schedule variance can only be calculated in the end of each sprint i.e: week 2, 4, 6, ect.");
-        }else {
+        } else {
             double PV = workPackages[weekIndex].getEstimatedHours() + workPackages[weekIndex - 1].getEstimatedHours();
-            SV = (EV(members, workPackages, weekIndex) - ( PV * members[0].getCostPerHour()));
+            SV = (EV(members, workPackages, weekIndex) - (PV * members[0].getCostPerHour()));
         }
         return SV;
     }

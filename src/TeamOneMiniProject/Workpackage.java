@@ -5,27 +5,17 @@ public class Workpackage {
     private String[] id;
     private double estimatedHours;
     private double workedHours;
-    private int [] week;
+    private int[] week;
 
 
-
-    public Workpackage(String name, String[] id, double estimatedHours, int [] week, double workedHours) {
-        this.name = name;
-        this.id = id;
-        this.estimatedHours = estimatedHours;
-        this.workedHours = workedHours;
-        this.week = week;
+    public Workpackage() {
     }
+
 
     public double getWorkedHours() {
         return workedHours;
     }
 
-
-
-    public Workpackage() {
-
-    }
 
     public String getName() {
         return name;
@@ -47,7 +37,7 @@ public class Workpackage {
         return week[i];
     }
 
-    public String getIdValue(int i){
+    public String getIdValue(int i) {
         return id[i];
     }
 
