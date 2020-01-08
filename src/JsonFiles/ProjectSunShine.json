@@ -1,60 +1,132 @@
 {
-  "projectName": "Sun Shine",
-  "startWeek": 30,
+  "projectName": "SunShine",
+  "startWeek": 45,
   "endWeek": 3,
   "members": [
     {
-      "id": "123",
+      "id": "IS01",
       "fullName": "Idrees",
       "costPerHour": "500",
       "work": {
-        "week1": 1,
-        "week2": 4
+        "week1": 1.5,
+        "week2": 1,
+        "week3": 0.5,
+        "week4": 19,
+        "week5": 7.5,
+        "week6": 8,
+        "week7": 9,
+        "week8": 2,
+        "week9": 1.5,
+        "week10": 3,
+        "week11": 2
       }
     },
     {
-      "id": "123",
+      "id": "OH02",
       "fullName": "Oscar",
       "costPerHour": "500",
       "work": {
-        "week1": 10,
-        "week2": 2
+        "week1": 1.5,
+        "week2": 1,
+        "week3": 0.5,
+        "week4": 4,
+        "week5": 3.5,
+        "week6": 3,
+        "week7": 16.5,
+        "week8": 2,
+        "week9": 1.5,
+        "week10": 3,
+        "week11": 2
       }
     },
     {
-      "id": "123",
+      "id": "RA03",
       "fullName": "Ramzi",
       "costPerHour": "500",
       "work": {
-        "week1": 1,
-        "week2": 10
+        "week1": 1.5,
+        "week2": 1,
+        "week3": 0.5,
+        "week4": 20,
+        "week5": 4.5,
+        "week6": 11,
+        "week7": 14,
+        "week8": 4,
+        "week9": 1.5,
+        "week10": 3,
+        "week11": 2
       }
     },
     {
-      "id": "123",
+      "id": "FT04",
       "fullName": "Freja",
       "costPerHour": "500",
       "work": {
-        "week1": 5,
-        "week2": 2
+        "week1": 1.5,
+        "week2": 1,
+        "week3": 0.5,
+        "week4": 2,
+        "week5": 3.5,
+        "week6": 10,
+        "week7": 2,
+        "week8": 1,
+        "week9": 1.5,
+        "week10": 0,
+        "week11": 2
       }
     },
     {
-      "id": "123",
-      "fullName": "Gabriel",
-      "costPerHour": "500",
-      "work": {
-        "week1": 1,
-        "week2": 90
-      }
-    },
-    {
-      "id": "123",
+      "id": "JT05",
       "fullName": "Johann",
       "costPerHour": "500",
       "work": {
-        "week1": 1,
-        "week2": 70
+        "week1": 1.5,
+        "week2": 1,
+        "week3": 0.5,
+        "week4": 6,
+        "week5": 8.5,
+        "week6": 7.5,
+        "week7": 9.5,
+        "week8": 2,
+        "week9": 1.5,
+        "week10": 3,
+        "week11": 2
+      }
+    },
+    {
+      "id": "GW06",
+      "fullName": "Gabriel",
+      "costPerHour": "500",
+      "work": {
+        "week1": 1.5,
+        "week2": 1,
+        "week3": 0.5,
+        "week4": 4,
+        "week5": 0,
+        "week6": 0,
+        "week7": 0,
+        "week8": 0,
+        "week9": 0,
+        "week10": 0,
+        "week11": 0
+      }
+    },
+    {
+      "id": "EL07",
+      "fullName": "Erlend",
+      "costPerHour": "500",
+      "work": {
+        "week1": 1.5,
+        "week2": 4,
+        "week3": 0,
+        "week4": 0,
+        "week5": 0,
+        "week6": 0,
+        "week7": 0,
+        "week8": 0,
+        "week9": 0,
+        "week10": 0,
+        "week11": 0
       }
     }
   ],
@@ -62,7 +134,7 @@
     {
       "description": "Dividing the work",
       "impact": 3,
-      "probability": 0.3
+      "probability": 0.5
     },
     {
       "description": "Group/Pair Programming",
@@ -76,87 +148,106 @@
     {
       "description": "GITLAB",
       "impact": 3,
-      "probability": 0.1
+      "probability": 0.5
     },
     {
       "description": "Conflicts within the Team",
-      "impact": 2,
+      "impact": 3,
       "probability": 0.5
     },
     {
       "description": "Estimation and Scheduling",
       "impact": 4,
-      "probability": 0.3
-    },{
+      "probability": 0.7
+    },
+    {
       "description": "Team Member Turnover",
       "impact": 5,
-      "probability": 0.7
+      "probability": 0.3
     },
     {
       "description": "Budget Risk",
       "impact": 4,
-      "probability": 0.3
+      "probability": 0.7
     },
     {
-      "description": "Design and requirement ",
-      "impact": 4,
-      "probability": 0.3
+      "description": "Design and requirement",
+      "impact": 3,
+      "probability": 0.5
     }
   ],
   "workPackages": [
     {
-      "name": "Input handling",
-      "id": [1,2],
-      "estimatedHours": 5,
-      "workedHours":2,
+      "name": "Group Dynamic",
+      "id": ["IS01","OH02","RA03", "FT04","JT05", "GW06", "EL07"],
+      "estimatedHours": 7,
+      "workedHours": 10.5,
       "week": [1]
     },
     {
-      "name": "Testing",
-      "id": [1,2],
-      "estimatedHours": 15,
-      "workedHours":3,
-      "week": [1,2,3]
+      "name": "Team Contract",
+      "id": ["IS01","OH02","RA03", "FT04","JT05", "GW06", "EL07"],
+      "estimatedHours": 12.5,
+      "workedHours": 10,
+      "week": [2]
     },
     {
-      "name": "Planning",
-      "id": [1,2],
-      "estimatedHours": 30,
-      "workedHours":2,
-      "week": [1]
+      "name": "Project Plan",
+      "id": ["IS01","OH02","RA03", "FT04","JT05", "GW06"],
+      "estimatedHours": 22,
+      "workedHours": 3,
+      "week": [3]
     }, {
       "name": "Input handling",
-      "id": [1,2],
-      "estimatedHours": 50,
-      "workedHours":2,
-      "week": [1]
+      "id": ["IS01","OH02","RA03", "FT04","JT05", "GW06"],
+      "estimatedHours": 11,
+      "workedHours": 55,
+      "week": [4]
     },
     {
-      "name": "Input handling",
-      "id": [1,2],
-      "estimatedHours": 70,
-      "workedHours":2,
-      "week": [1]
+      "name": "Planning Poker",
+      "id": ["IS01","OH02","RA03", "FT04","JT05"],
+      "estimatedHours": 6,
+      "workedHours": 29.5,
+      "week": [5]
     },
     {
-      "name": "Input handling",
-      "id": [1,2],
-      "estimatedHours": 100,
-      "workedHours":2,
-      "week": [1]
+      "name": "Post-Mortem Report",
+      "id": ["IS01","OH02","RA03", "FT04","JT05"],
+      "estimatedHours": 3,
+      "workedHours": 39.5,
+      "week": [6]
     },
     {
-      "name": "Input handling",
-      "id": [1,2],
-      "estimatedHours": 120,
-      "workedHours":2,
-      "week": [1]
+      "name": "Calculations",
+      "id": ["IS01","OH02","RA03", "FT04","JT05"],
+      "estimatedHours": 8,
+      "workedHours": 53,
+      "week": [7]
     }, {
-      "name": "Input handling",
-      "id": [1,2],
-      "estimatedHours": 150,
-      "workedHours":2,
-      "week": [1]
+      "name": "Visualisation",
+      "id": ["IS01","OH02","RA03", "FT04","JT05"],
+      "estimatedHours": 20,
+      "workedHours": 12,
+      "week": [8]
+    }, {
+      "name": "Test",
+      "id": ["IS01","OH02","RA03", "FT04","JT05"],
+      "estimatedHours": 8,
+      "workedHours": 9.5,
+      "week": [9]
+    }, {
+      "name": "Presentation",
+      "id": ["IS01","OH02","RA03","JT05"],
+      "estimatedHours": 10,
+      "workedHours": 12,
+      "week": [10]
+    }, {
+      "name": "Report",
+      "id": ["IS01","OH02","RA03","JT05", "FT04"],
+      "estimatedHours": 24,
+      "workedHours": 10,
+      "week": [11]
     }
   ]
 }

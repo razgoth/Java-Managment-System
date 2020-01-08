@@ -24,7 +24,6 @@ public class Project {
     public Project() {
     }
 
-    ;
 
     public String getProjectName() {
         return projectName;
