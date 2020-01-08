@@ -123,14 +123,13 @@ public class Calculations {
         }
         return riskMatrices;
     }
-    // this is ramzi method for EV, since salary can be different and needs looping in the main add an argument for salary
+    //  calculate 1EV
     public static double EV(Member[] members, Workpackage[] workpackages, int weeks) {
         double EV = 0;
         double salary = 0.0;
         int week = weeks - 1;
         int i = 0;
         if (weeks > 0 && weeks < workpackages.length && weeks%2 !=0) {
-            double estimated = workpackages[week].getEstimatedHours() + workpackages[week + 1].getEstimatedHours();
             double actualHours = workpackages[week].getWorkedHours() + workpackages[week + 1].getWorkedHours();
             int numberOfWorkers = workpackages[week].getId().length + workpackages[week + 1].getId().length;
             int numberOfWeeks = workpackages[week].getWeek().length;
