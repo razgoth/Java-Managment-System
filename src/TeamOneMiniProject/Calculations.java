@@ -90,28 +90,22 @@ public class Calculations {
     //  calculate EV
     public static double EV(Member[] members, Workpackage[] workpackages, int weeks) {
         double EV1 = 0;
-        double EV2= 0;
-        double salary = 0.0;
+        double PV = 0;
         int week = weeks - 1;
         int i = 0;
         if (weeks > 0 && weeks < workpackages.length && weeks % 2 != 0) {
-            double actualHoursWeek1 = workpackages[week].getWorkedHours();
-            double actualHoursWeek2 = workpackages[week + 1].getWorkedHours();
-            int numberOfWorkers1 = workpackages[week].getId().length;
-            int numberOfWorkers2 = workpackages[week + 1].getId().length;
-            int numberOfWeeks = workpackages[week].getWeek().length;
-            salary = members[i].getCostPerHour();
-
-
-            EV1 = (actualHoursWeek1/numberOfWorkers1) * numberOfWorkers1 * salary * numberOfWeeks;
-            EV2 = (actualHoursWeek2/numberOfWorkers2) * numberOfWorkers2 * salary * numberOfWeeks;
-
-
+            double actualHours = workpackages[week].getWorkedHours() + workpackages[week + 1].getWorkedHours();
+            double planedHours = workpackages[week].getEstimatedHours() + workpackages [week + 1].getEstimatedHours();
+            double workDoneInPercent = ((planedHours*100)/actualHours);
+            PV = planedHours * members[i].getCostPerHour();
+            EV1 = ((PV * workDoneInPercent) / 100) ;
         } else {
             System.out.println("The week you entered is invalid ");
         }
-        return EV1 + EV2;
+        return EV1;
     }
+
+
 
     public static String ActivitySchedule(Workpackage[] workpackages, int weeks) {
         int weekName = 0;
