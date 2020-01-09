@@ -182,6 +182,7 @@
       "id": ["IS01","OH02","RA03", "FT04","JT05", "GW06", "EL07"],
       "estimatedHours": 7,
       "workedHours": 10.5,
+      "completeness": 1.0,
       "week": [1]
     },
     {
@@ -189,6 +190,7 @@
       "id": ["IS01","OH02","RA03", "FT04","JT05", "GW06", "EL07"],
       "estimatedHours": 12.5,
       "workedHours": 10,
+      "completeness": 1.0,
       "week": [2]
     },
     {
@@ -196,12 +198,14 @@
       "id": ["IS01","OH02","RA03", "FT04","JT05", "GW06"],
       "estimatedHours": 22,
       "workedHours": 3,
+      "completeness": 1.0,
       "week": [3]
     }, {
       "name": "Input handling",
       "id": ["IS01","OH02","RA03", "FT04","JT05", "GW06"],
       "estimatedHours": 11,
       "workedHours": 55,
+      "completeness": 1.0,
       "week": [4]
     },
     {
@@ -209,6 +213,7 @@
       "id": ["IS01","OH02","RA03", "FT04","JT05"],
       "estimatedHours": 6,
       "workedHours": 29.5,
+      "completeness": 1.0,
       "week": [5]
     },
     {
@@ -216,6 +221,7 @@
       "id": ["IS01","OH02","RA03", "FT04","JT05"],
       "estimatedHours": 3,
       "workedHours": 39.5,
+      "completeness": 1.0,
       "week": [6]
     },
     {
@@ -223,30 +229,35 @@
       "id": ["IS01","OH02","RA03", "FT04","JT05"],
       "estimatedHours": 8,
       "workedHours": 53,
+      "completeness": 1.0,
       "week": [7]
     }, {
       "name": "Visualisation",
       "id": ["IS01","OH02","RA03", "FT04","JT05"],
       "estimatedHours": 20,
       "workedHours": 12,
+      "completeness": 1.0,
       "week": [8]
     }, {
       "name": "Test",
       "id": ["IS01","OH02","RA03", "FT04","JT05"],
       "estimatedHours": 8,
       "workedHours": 9.5,
+      "completeness": 1.0,
       "week": [9]
     }, {
       "name": "Presentation",
       "id": ["IS01","OH02","RA03","JT05"],
       "estimatedHours": 10,
       "workedHours": 12,
+      "completeness": 1.0,
       "week": [10]
     }, {
       "name": "Report",
       "id": ["IS01","OH02","RA03","JT05", "FT04"],
       "estimatedHours": 24,
       "workedHours": 10,
+      "completeness": 1.0,
       "week": [11]
     }
   ]

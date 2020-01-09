@@ -12,7 +12,7 @@ import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
 
 public class Main {
     Scanner scanner = new Scanner((System.in));
-    Project projectSunShine = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\ProjectSunShine.json", Project.class);
+    Project projectSunShine = convertJsonToObject("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/ProjectSunShine.json", Project.class);
 
     private final String EARNED_VALUE = "1";
     private final String SCHEDULE_VARIANCE = "2";
@@ -132,7 +132,7 @@ public class Main {
     private void printRiskMatrix() {
         HashMap<String, Double> riskMatrix = projectSunShine.getRiskMatrix();
         for (String key : riskMatrix.keySet()) {
-            System.out.printf( "\n %25s  %23s %n\n",key, riskMatrix.get(key));
+            System.out.printf( " %25s  %23s %n",key, riskMatrix.get(key));
             }
     }
 

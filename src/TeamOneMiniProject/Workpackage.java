@@ -5,6 +5,7 @@ public class Workpackage {
     private String[] id;
     private double estimatedHours;
     private double workedHours;
+    private double completeness;
     private int[] week;
 
 
@@ -39,6 +40,9 @@ public class Workpackage {
 
     public String getIdValue(int i) {
         return id[i];
+    }
+
+    public double getCompleteness(){ return completeness;
     }
 
 
