@@ -243,7 +243,7 @@
       "id": ["IS01","OH02","RA03", "FT04","JT05"],
       "estimatedHours": 8,
       "workedHours": 9.5,
-      "completeness": 0.5,
+      "completeness": 0.55,
       "week": [9]
     }, {
       "name": "Presentation",
