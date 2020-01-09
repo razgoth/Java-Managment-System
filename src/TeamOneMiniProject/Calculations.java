@@ -102,7 +102,7 @@ public class Calculations {
         } else {
             System.out.println("The week you entered is invalid ");
         }
-        return EV1;
+        return Math.round(EV1);
     }
 
 
@@ -138,7 +138,7 @@ public class Calculations {
             double AC = (workPackages[weekIndex].getWorkedHours() + workPackages[weekIndex - 1].getWorkedHours()) * members[0].getCostPerHour();
             cv = (EV(members, workPackages, weekIndex) - AC);
         }
-        return cv;
+        return Math.round(cv);
     }
 
     public static double SV(Member[] members, Workpackage[] workPackages, int week) {
