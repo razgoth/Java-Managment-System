@@ -132,7 +132,7 @@ public class Main {
     private void printRiskMatrix() {
         HashMap<String, Double> riskMatrix = projectSunShine.getRiskMatrix();
         for (String key : riskMatrix.keySet()) {
-            System.out.printf( "\n %25s  %23s %n\n",key, riskMatrix.get(key));
+            System.out.printf( " %25s  %23s %n",key, riskMatrix.get(key));
             }
     }
 
