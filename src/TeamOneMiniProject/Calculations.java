@@ -81,7 +81,7 @@ public class Calculations {
     // this method gets an array of risk and return a HashMap of Description and risk
     public static HashMap<String, Double> riskMatrix(Risk[] risks) {
         HashMap<String, Double> riskMatrices = new HashMap<>();
-        System.out.printf("\n%s %s %12s %s %s %n\n", "|", "Name of Risk", "|", "Risk", "|");
+        System.out.printf("\n %22s %22s %s %s %n\n", "Name of Risk", "|", "Risk", "|");
 
         for (int i = 0; i < risks.length; i++) {
 
