@@ -1,18 +1,19 @@
 package TeamOneMiniProject;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class Member {
     private String id;
     private String fullName;
     private double costPerHour;
-    private HashMap<String, Double> work;
+    private LinkedHashMap<String, Double> work;
 
     public Member(){
-        work = new HashMap<String, Double>();
+        work = new LinkedHashMap<String, Double>();
     }
 
-    public Member(String id, String fullName, double costPerHour, HashMap<String, Double> work) {
+    public Member(String id, String fullName, double costPerHour, LinkedHashMap<String, Double> work) {
         this.id = id;
         this.fullName = fullName;
         this.costPerHour = costPerHour;
@@ -32,7 +33,7 @@ public class Member {
         return costPerHour;
     }
 
-    public HashMap<String, Double> getWork() {
+    public LinkedHashMap<String, Double> getWork() {
         return work;
     }
 

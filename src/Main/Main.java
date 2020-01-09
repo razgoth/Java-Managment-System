@@ -4,6 +4,7 @@ import TeamOneMiniProject.Member;
 import TeamOneMiniProject.Project;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
 
 public class Main {
     Scanner scanner = new Scanner((System.in));
-    Project projectSunShine = convertJsonToObject("C:\\Users\\ramzi\\Documents\\Minigit\\project-group-1\\src\\JsonFiles\\ProjectSunShine.json", Project.class);
+    Project projectSunShine = convertJsonToObject("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/ProjectSunShine.json", Project.class);
 
     private final String EARNED_VALUE = "1";
     private final String SCHEDULE_VARIANCE = "2";
@@ -72,6 +73,7 @@ public class Main {
             } while (!userInputMenu.equalsIgnoreCase(QUIT));
         } catch (Exception e) {
             System.out.println("Something went wrong");
+           // e.printStackTrace();
         }
 
     }
@@ -154,7 +156,7 @@ public class Main {
     public static void printHoursHash(Member foundMember) {
         double totalHours = 0;
         if (foundMember != null) {
-            HashMap<String, Double> work = foundMember.getWork();
+            LinkedHashMap<String, Double> work =  foundMember.getWork();
 
             System.out.println(foundMember.getFullName() + "'s worked hours:");
             System.out.printf("\n%s %s %2s %s %s %n\n", "|", "Week", "|", "Hours", "|");
