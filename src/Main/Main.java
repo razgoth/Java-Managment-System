@@ -104,11 +104,15 @@ public class Main {
 
     private void printEarnedValue() {
         System.out.println("Earned Value\n");
+        double EVTotal = 0;
 
         for (int i = 1; i < projectSunShine.getWorkPackages().length; i += 2) {
+
             double earnedValue = projectSunShine.getEarnedValue(i);
+            EVTotal += earnedValue;
             System.out.println("Earned Value for week " + i + " and week " + (i + 1) + "  : " + earnedValue);
         }
+        System.out.println("\nTotal Earned Value: " + EVTotal);
     }
 
     private void printScheduleVariance() {

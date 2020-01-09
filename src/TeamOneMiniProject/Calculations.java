@@ -55,7 +55,7 @@ public class Calculations {
         return output;
     }
 
-    // puts the name a member and how much (s)he worked in a hash map
+    // puts the name of a member and how much (s)he worked in a hash map
     public static HashMap<String, Double> getHoursPerMember(Member[] members) {
 
         HashMap<String, Double> hoursPerMember = new HashMap<>();
@@ -73,7 +73,6 @@ public class Calculations {
         for (int i = 0; i < members.length; i++) {
             Double hours = members[i].getHoursWorked();
             sum += hours;
-
         }
         return sum;
     }
