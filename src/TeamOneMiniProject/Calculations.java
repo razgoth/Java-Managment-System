@@ -126,6 +126,7 @@ public class Calculations {
         return result;
     }
 
+    // this method calculates Cost Variance
     public static double CV(Member[] members, Workpackage[] workPackages, int week) {
         int weekIndex = week - 1;
         double cv = 0;
@@ -140,6 +141,7 @@ public class Calculations {
         return Math.round(cv);
     }
 
+    // this method calculates Schedule Variance
     public static double SV(Member[] members, Workpackage[] workPackages, int week) {
 
         int weekIndex = week - 1;
