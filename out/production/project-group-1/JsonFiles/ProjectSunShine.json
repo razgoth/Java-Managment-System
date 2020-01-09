@@ -198,14 +198,14 @@
       "id": ["IS01","OH02","RA03", "FT04","JT05", "GW06"],
       "estimatedHours": 22,
       "workedHours": 3,
-      "completeness": 1.0,
+      "completeness": 0.8,
       "week": [3]
     }, {
       "name": "Input handling",
       "id": ["IS01","OH02","RA03", "FT04","JT05", "GW06"],
       "estimatedHours": 11,
       "workedHours": 55,
-      "completeness": 1.0,
+      "completeness": 0.85,
       "week": [4]
     },
     {
@@ -229,21 +229,21 @@
       "id": ["IS01","OH02","RA03", "FT04","JT05"],
       "estimatedHours": 8,
       "workedHours": 53,
-      "completeness": 1.0,
+      "completeness": 0.2,
       "week": [7]
     }, {
       "name": "Visualisation",
       "id": ["IS01","OH02","RA03", "FT04","JT05"],
       "estimatedHours": 20,
       "workedHours": 12,
-      "completeness": 1.0,
+      "completeness": 0.7,
       "week": [8]
     }, {
       "name": "Test",
       "id": ["IS01","OH02","RA03", "FT04","JT05"],
       "estimatedHours": 8,
       "workedHours": 9.5,
-      "completeness": 1.0,
+      "completeness": 0.55,
       "week": [9]
     }, {
       "name": "Presentation",

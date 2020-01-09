@@ -12,7 +12,7 @@ import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
 
 public class Main {
     Scanner scanner = new Scanner((System.in));
-    Project projectSunShine = convertJsonToObject("/Users/ironmansmacbookpro2/project-group-1/src/JsonFiles/ProjectSunShine.json", Project.class);
+    Project projectSunShine = convertJsonToObject("/Users/Johann/IdeaProjects/project-group-1/src/JsonFiles/ProjectSunShine.json", Project.class);
 
     private final String EARNED_VALUE = "1";
     private final String SCHEDULE_VARIANCE = "2";
@@ -132,7 +132,7 @@ public class Main {
     private void printRiskMatrix() {
         HashMap<String, Double> riskMatrix = projectSunShine.getRiskMatrix();
         for (String key : riskMatrix.keySet()) {
-            System.out.printf( "\n %25s  %23s %n\n",key, riskMatrix.get(key));
+            System.out.printf( "%25s  %23s %n",key, riskMatrix.get(key));
             }
     }
 
@@ -150,11 +150,13 @@ public class Main {
     private void printTimeOfMembers() {
         HashMap<String, Double> timeOfMembers = projectSunShine.getTimeOfMembers();
         Double totalHours = projectSunShine.getTotalHours();
-        System.out.println("\nTime spent per member \n");
+        System.out.println("\nTime spent per member");
+
+        System.out.printf("\n%4s %s %s %2s %s %n\n", "|", "Name", "|", "Hours", "|");
         for (String key : timeOfMembers.keySet()) {
-            System.out.println(key + ": " + timeOfMembers.get(key));
+            System.out.printf("%10s %1s %s %n", key, ":", timeOfMembers.get(key));
         }
-        System.out.println("\nTotal: " + totalHours);
+        System.out.printf("\n%12s %2s \n", "Total : ", totalHours);
     }
 
 
