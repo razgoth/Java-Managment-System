@@ -141,7 +141,7 @@ public class Main {
         System.out.println("Project Name: " + projectSunShine.getProjectName());
         System.out.println("Start Week: " + projectSunShine.getStartWeek());
         System.out.println("End Week: " + projectSunShine.getEndWeek());
-        System.out.printf("\n%s %7n %n\n", "Work Package", "Week");
+        System.out.printf("\n%s %17s %4s %12s %4s %n\n", "|", "Work Package", "|", "Week", "|");
         for (int i = 0; i < projectSunShine.getWorkPackages().length; i++) {
             System.out.println(projectSunShine.getActivitySchedule(i));
         }
