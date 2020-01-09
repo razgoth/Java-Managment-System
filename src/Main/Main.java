@@ -146,6 +146,7 @@ public class Main {
     private void printTimeOfMembers() {
         HashMap<String, Double> timeOfMembers = projectSunShine.getTimeOfMembers();
         Double totalHours = projectSunShine.getTotalHours();
+        System.out.println("\nTime spent per member \n");
         for (String key : timeOfMembers.keySet()) {
             System.out.println(key + ": " + timeOfMembers.get(key));
         }
