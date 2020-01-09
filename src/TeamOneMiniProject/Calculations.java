@@ -153,8 +153,8 @@ public class Calculations {
         } else if (weekIndex % 2 == 0) {
             System.out.println("You have entered invalid week number. The Schedule variance can only be calculated in the end of each sprint i.e: week 2, 4, 6, ect.");
         } else {
-            double PV = workPackages[weekIndex].getEstimatedHours() + workPackages[weekIndex - 1].getEstimatedHours();
-            SV = (EV(members, workPackages, weekIndex) - (PV * members[0].getCostPerHour()));
+            double PV = (workPackages[weekIndex].getEstimatedHours() + workPackages[weekIndex - 1].getEstimatedHours()) * members[0].getCostPerHour();
+            SV = (EV(members, workPackages, weekIndex) - (PV));
         }
         return SV;
     }
