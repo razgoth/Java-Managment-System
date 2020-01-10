@@ -11,6 +11,14 @@ import java.util.Scanner;
 import static TeamOneMiniProject.JsonFileHandling.convertJsonToObject;
 
 public class Main {
+
+    // the codes between line 16 - 19 is part of java library, and it is taken from https://bit.ly/2FCrcA4
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+
+
     Scanner scanner = new Scanner((System.in));
     Project projectSunShine = convertJsonToObject("src/JsonFiles/ProjectSunShine.json", Project.class);
 
@@ -73,14 +81,14 @@ public class Main {
             } while (!userInputMenu.equalsIgnoreCase(QUIT));
         } catch (Exception e) {
             System.out.println("Something went wrong");
-           // e.printStackTrace();
+            // e.printStackTrace();
         }
 
     }
 
 
     private void printMenu() {
-        System.out.println("\n***Welcome To Team One ***\n ");
+        System.out.println(BLUE + "\n***Welcome To Project SunShine***\n " + RESET);
         System.out.println("1: Get the Earned Value (EV)");
         System.out.println("2: Get the Schedule Variance (SV)");
         System.out.println("3: Get the Cost Variance (CV)");
@@ -103,46 +111,54 @@ public class Main {
 
 
     private void printEarnedValue() {
-        System.out.println("Earned Value\n");
+        System.out.println(BLUE + "Earned Value\n" + RESET);
         double EVTotal = 0;
 
         for (int i = 1; i < projectSunShine.getWorkPackages().length; i += 2) {
 
             double earnedValue = projectSunShine.getEarnedValue(i);
             EVTotal += earnedValue;
-            System.out.println("Earned Value for week " + i + " and week " + (i + 1) + "  : " + earnedValue);
+            System.out.println("Earned Value for week " + i + " and week " + (i + 1) + "  : " + RED + earnedValue + RESET);
         }
-        System.out.println("\nTotal Earned Value: " + EVTotal);
+        System.out.println("\nTotal Earned Value: " + RED + EVTotal);
     }
 
     private void printScheduleVariance() {
+        double totalSV = 0;
+        System.out.println(BLUE + "Schedule Variance\n" + RESET);
         for (int i = 2; i < projectSunShine.getWorkPackages().length; i += 2) {
             double scheduleVariance = projectSunShine.getScheduleVariance(i);
-            System.out.println("Schedule Variance for week " + (i - 1) + " and week " + i + "  : " + scheduleVariance);
+            System.out.println("Schedule Variance for week " + (i - 1) + " and week " + i + "  : " + RED + scheduleVariance + RESET);
+            totalSV += scheduleVariance;
         }
+        System.out.println("\nTotal Earned Value: " + RED + totalSV);
     }
 
     private void printCostVariance() {
+        double totalCV = 0;
+        System.out.println(BLUE + "Cost Variance\n" + RESET);
         for (int i = 2; i < projectSunShine.getWorkPackages().length; i += 2) {
             double costVariance = projectSunShine.getCostVariance(i);
-            System.out.println("Cost Variance for week " + (i - 1) + " and week " + i + "  : " + costVariance);
+            totalCV += costVariance;
+            System.out.println("Cost Variance for week " + (i - 1) + " and week " + i + "  : " + RED + costVariance + RESET);
         }
+        System.out.println("\nTotal Earned Value: " + RED + totalCV);
     }
 
     private void printRiskMatrix() {
         HashMap<String, Double> riskMatrix = projectSunShine.getRiskMatrix();
-        System.out.printf("\n %22s %22s %s %s %n\n", "Name of Risk", "|", "Risk", "|");
+        System.out.printf(BLUE + "\n%s %17s %16s %14s %14s %n\n", "|", "Risks", "|", "Matrix", "|" + RESET);
         for (String key : riskMatrix.keySet()) {
-            System.out.printf( "%25s  %23s %n",key, riskMatrix.get(key));
-            }
+            System.out.printf("%25s  %23s %n", key, riskMatrix.get(key));
+        }
     }
 
     private void printProjectSchedule() {
-        System.out.println("Project Schedule\n");
-        System.out.println("Project Name: " + projectSunShine.getProjectName());
-        System.out.println("Start Week: " + projectSunShine.getStartWeek());
-        System.out.println("End Week: " + projectSunShine.getEndWeek());
-        System.out.printf("\n%s %17s %4s %12s %4s %n\n", "|", "Work Package", "|", "Week", "|");
+        System.out.println(BLUE + "Project Schedule\n" + RESET);
+        System.out.println("Project Name: " + YELLOW + projectSunShine.getProjectName() + RESET);
+        System.out.println("Start Week: " + RED + projectSunShine.getStartWeek() + RESET);
+        System.out.println("End Week: " + RED + projectSunShine.getEndWeek() + RESET);
+        System.out.printf(BLUE + "\n%s %17s %4s %13s %8s %n\n", "|", "Work Package", "|", "Week", "|" + RESET);
         for (int i = 0; i < projectSunShine.getWorkPackages().length; i++) {
             System.out.println(projectSunShine.getActivitySchedule(i));
         }
@@ -151,23 +167,23 @@ public class Main {
     private void printTimeOfMembers() {
         HashMap<String, Double> timeOfMembers = projectSunShine.getTimeOfMembers();
         Double totalHours = projectSunShine.getTotalHours();
-        System.out.println("\nTime spent per member");
+        System.out.println(BLUE + "\nTime spent per member" + RESET);
 
-        System.out.printf("\n%4s %s %s %2s %s %n\n", "|", "Name", "|", "Hours", "|");
+        System.out.printf(BLUE + "\n%3s %6s %6s %8s %5s %n\n", "|", "Name", "|", "Hours", "|" + RESET);
         for (String key : timeOfMembers.keySet()) {
-            System.out.printf("%10s %1s %s %n", key, ":", timeOfMembers.get(key));
+            System.out.printf("%10s %1s %13s %n", key, ":", timeOfMembers.get(key));
         }
-        System.out.printf("\n%12s %2s \n", "Total : ", totalHours);
+        System.out.printf("\n%13s %13s \n", "Total : ", totalHours);
     }
 
 
     public static void printHoursHash(Member foundMember) {
         double totalHours = 0;
         if (foundMember != null) {
-            LinkedHashMap<String, Double> work =  foundMember.getWork();
+            LinkedHashMap<String, Double> work = foundMember.getWork();
 
             System.out.println(foundMember.getFullName() + "'s worked hours:");
-            System.out.printf("\n%s %s %2s %s %s %n\n", "|", "Week", "|", "Hours", "|");
+            System.out.printf(BLUE + "\n%s %s %2s %s %s %n\n", "|", "Week", "|", "Hours", "|" + RESET);
 
             for (Map.Entry<String, Double> week : work.entrySet()) {
                 System.out.println("  " + week.getKey() + ":  " + week.getValue());
@@ -221,7 +237,7 @@ public class Main {
     }
 
     private void printMemberSubMenu1() {
-        System.out.println("\n***Welcome To Team Member Data ***\n ");
+        System.out.println(BLUE + "\n***Welcome To Team Member Data ***\n " + RESET);
         System.out.println("1: Get the time spent by a team member of you choice");
         System.out.println("2: Get the work packages worked on by a team member of you choice");
         System.out.println("3: Go back to main menu! ");
@@ -229,10 +245,10 @@ public class Main {
     }
 
     private void printMemberSubMenu2() {
-        System.out.printf("\n%s %s %s %2s %4s %n\n", "|", "ID", "|", "Name", "|");
+        System.out.printf(BLUE + "\n%3s %6s %6s %7s %9s %n\n", "|", "Name", "|", "ID", "|" + RESET);
         HashMap<String, String> memberId = projectSunShine.getMemberId();
         for (String key : memberId.keySet()) {
-            System.out.println(" " + memberId.get(key) + " : " + key);
+            System.out.printf("%10s %1s %13s %n", key, ":", memberId.get(key));
         }
     }
 

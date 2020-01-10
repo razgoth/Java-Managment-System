@@ -8,7 +8,7 @@ public class Calculations {
 
     public static Member retrieveMember(Member[] members, String id) {
         for (int i = 0; i < members.length; i++) {
-            if (members[i].getId().equals(id)) {
+            if (members[i].getId().equalsIgnoreCase(id)) {
                 return members[i];
             }
         }
@@ -34,7 +34,7 @@ public class Calculations {
 
             // Iterates Id-array within workpackage-array
             for (int j = 0; j < workpackages[i].getId().length; j++) {
-                if (workpackages[i].getIdValue(j).equals(id)) {
+                if (workpackages[i].getIdValue(j).equalsIgnoreCase(id)) {
                     wp += "* " + workpackages[i].getName() + "\n";
                 }
             }
